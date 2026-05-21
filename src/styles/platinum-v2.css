@@ -1,0 +1,1137 @@
+/* ============================================================
+   PLATINUM v2 — Bold visual rebuild
+   --------------------------------------------------------------
+   Layers over components.css + the original .site--platinum
+   polish. Goal: a major visible jump in editorial confidence —
+   stronger wordmark, bigger masthead, denser cinematic feel,
+   richer color depth, more confident gallery, sharper motion.
+   ============================================================ */
+
+.site--platinum {
+  /* Tighter, more cinematic palette — the previous warm ivory was washing
+     everything out. Now: a paper that breathes against a deep onyx and a
+     more confident warm-platinum signature. */
+  --bg: #f3ede1;
+  --bg-soft: #e6dccb;
+  --bg-paper: #f8f2e6;
+  --bg-elev: #fffaf0;
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
+  --onyx: #0c0a08;
+  --onyx-soft: #1a1612;
+
+  --line: rgba(20, 14, 8, 0.14);
+  --line-strong: rgba(20, 14, 8, 0.28);
+
+  --text: #100c08;
+  --text-dim: #3a3128;
+  --text-mute: #756a5d;
+
+  --accent: #c69253;            /* warm platinum/gold */
+  --accent-warm: #d88a35;       /* ember italic */
+  --accent-deep: #8c6230;
+  --accent-soft: #f0d6ad;
+  --accent-veil: rgba(243, 216, 184, 0.22);
+  --dark: #0c0a08;
+
+  --display: 'Italiana', 'Fraunces', 'Times New Roman', Georgia, serif;
+
+  --section-y: clamp(96px, 11vw, 168px);
+  --pad: clamp(24px, 5vw, 120px);
+}
+
+/* ============================================================
+   1. TYPOGRAPHY — bigger, more confident editorial scale
+   ============================================================ */
+
+.site--platinum .display,
+.site--platinum .hero__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 144, 'SOFT' 25;
+  font-size: clamp(56px, 11vw, 200px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.site--platinum .display em,
+.site--platinum .hero__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.site--platinum .h-lg {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 7vw, 116px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+.site--platinum .h-lg em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-style: italic;
+}
+
+.site--platinum .h-md {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 350;
+  font-variation-settings: 'opsz' 96;
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+}
+
+.site--platinum .lede {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.62;
+  letter-spacing: -0.005em;
+  color: var(--text-dim);
+  max-width: 56ch;
+}
+
+.site--platinum .eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  font-weight: 500;
+}
+.site--platinum .eyebrow::before {
+  width: 40px;
+  background: var(--accent);
+  opacity: 0.65;
+}
+
+/* ============================================================
+   2. NAV — wordmark lockup
+   ============================================================ */
+
+.site--platinum .nav {
+  padding-block: 26px;
+  padding-inline: var(--pad);
+}
+.site--platinum .nav--scrolled {
+  background: rgba(243, 237, 225, 0.82);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  padding-block: 16px;
+}
+
+.site--platinum .nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 18px);
+}
+.site--platinum .nav__lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.site--platinum .nav__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+  transform: none;
+  transition: transform 0.45s var(--ease-out);
+}
+.site--platinum .nav__brand:hover .nav__mark {
+  transform: translateX(2px);
+}
+.site--platinum .nav__mark-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(198, 146, 83, 0.18);
+}
+.site--platinum .nav__mark-rule {
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(198, 146, 83, 0));
+}
+.site--platinum .nav__name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.32em;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.site--platinum .nav__name-primary {
+  font-family: var(--display);
+  letter-spacing: 0.22em;
+}
+.site--platinum .nav__name-italic {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+  font-size: 0.7em;
+  color: var(--accent-warm);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  transform: translateY(-0.04em);
+}
+.site--platinum .nav__sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding-left: 14px;
+  margin-left: 4px;
+  border-left: 1px solid var(--line);
+  border-image: none;
+}
+.site--platinum .nav__sub-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+}
+
+.site--platinum .nav__links {
+  display: flex;
+  gap: 2px;
+}
+.site--platinum .nav__links a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 10px 14px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0;
+  position: relative;
+  transition: color 0.3s var(--ease-out);
+}
+.site--platinum .nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s var(--ease-out);
+}
+.site--platinum .nav__links a:hover {
+  color: var(--text);
+  background: transparent;
+}
+.site--platinum .nav__links a:hover::after {
+  transform: scaleX(1);
+}
+.site--platinum .nav__link-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-mute);
+  font-variant-numeric: tabular-nums;
+}
+.site--platinum .nav__link-label {
+  font-size: 13px;
+}
+
+.site--platinum .nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px 12px 16px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: var(--text);
+  color: #fdfaf2;
+  border: 1px solid var(--text);
+  transition: background 0.35s var(--ease-out), color 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+.site--platinum .nav__cta:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.site--platinum .nav__cta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(243, 216, 184, 0.2);
+}
+.site--platinum .nav__cta:hover .nav__cta-dot {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+.site--platinum .nav__cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s var(--ease-out);
+}
+.site--platinum .nav__cta:hover .nav__cta-arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1100px) {
+  .site--platinum .nav__sub { display: none; }
+}
+@media (max-width: 820px) {
+  .site--platinum .nav__links { display: none; }
+}
+
+/* ============================================================
+   3. HERO — bolder cinematic editorial
+   ============================================================ */
+
+.site--platinum .hero--cinematic {
+  min-height: 100svh;
+  padding-block: clamp(120px, 14vh, 180px) clamp(72px, 10vh, 144px);
+  background: var(--onyx);
+}
+.site--platinum .hero--cinematic .hero__stage {
+  background: #0a0807;
+}
+.site--platinum .hero--cinematic .hero__slide {
+  transition: opacity 1.8s var(--ease-out), transform 36s linear;
+  transform: translate3d(0, -1.2%, 0) scale(1.1);
+  opacity: 0;
+}
+.site--platinum .hero__stage--slide .hero__slide {
+  transform: translate3d(7%, -1.2%, 0) scale(1.06);
+  transition: opacity 1.8s var(--ease-out), transform 2.6s var(--ease-out);
+}
+.site--platinum .hero__stage--slide[data-direction='backward'] .hero__slide {
+  transform: translate3d(-7%, -1.2%, 0) scale(1.06);
+}
+.site--platinum .hero--cinematic .hero__slide.is-active {
+  opacity: 1;
+  transform: translate3d(0, 1.6%, 0) scale(1.0);
+  transition: opacity 1.8s var(--ease-out), transform 36s linear;
+}
+.site--platinum .hero__stage--slide .hero__slide.is-prev {
+  opacity: 0;
+  transform: translate3d(-7%, -1.2%, 0) scale(1.04);
+}
+.site--platinum .hero__stage--slide[data-direction='backward'] .hero__slide.is-prev {
+  transform: translate3d(7%, -1.2%, 0) scale(1.04);
+}
+
+.site--platinum .hero--cinematic .hero__media {
+  filter: saturate(0.94) contrast(1.06) brightness(0.96);
+}
+
+/* Cleaner cinematic gradient — protects masthead/title without crushing media */
+.site--platinum .hero--cinematic .hero__slide-tint {
+  background:
+    linear-gradient(180deg,
+      rgba(8, 6, 4, 0.42) 0%,
+      rgba(8, 6, 4, 0.06) 24%,
+      rgba(8, 6, 4, 0.02) 46%,
+      rgba(8, 6, 4, 0.42) 78%,
+      rgba(8, 6, 4, 0.78) 100%),
+    radial-gradient(120% 70% at 50% 110%, rgba(8, 6, 4, 0.55), transparent 60%);
+}
+.site--platinum .hero--cinematic .hero__stage-veil {
+  background:
+    radial-gradient(80% 60% at 80% 0%, rgba(243, 216, 184, 0.07), transparent 60%),
+    radial-gradient(60% 50% at 8% 100%, rgba(198, 146, 83, 0.08), transparent 60%);
+  z-index: 1;
+}
+
+/* Masthead — large platinum lockup over the hero */
+.site--platinum .hero__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(28px, 4.6vh, 56px);
+}
+.site--platinum .hero__masthead {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.4vw, 22px);
+  margin-bottom: clamp(20px, 3vh, 36px);
+  padding-bottom: clamp(14px, 1.8vh, 22px);
+  border-bottom: 1px solid rgba(243, 216, 184, 0.18);
+  max-width: 880px;
+}
+.site--platinum .hero__masthead-rule {
+  flex: 0 0 auto;
+  width: clamp(40px, 7vw, 84px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-warm), rgba(243, 216, 184, 0.4));
+}
+.site--platinum .hero__masthead-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: rgba(243, 216, 184, 0.92);
+  font-weight: 500;
+}
+
+.site--platinum .hero--cinematic .hero__title {
+  color: #fdfaf2;
+  text-shadow: 0 1px 22px rgba(8, 6, 4, 0.55);
+  max-width: 19ch;
+  font-size: clamp(60px, 12vw, 220px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  margin: 0;
+}
+.site--platinum .hero--cinematic .hero__title em {
+  color: var(--accent-soft);
+}
+
+.site--platinum .hero--cinematic .lede {
+  color: rgba(253, 250, 242, 0.94);
+  max-width: 52ch;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.6;
+  text-shadow: 0 1px 14px rgba(8, 6, 4, 0.45);
+}
+.site--platinum .hero--cinematic .eyebrow {
+  color: rgba(243, 216, 184, 0.92);
+}
+.site--platinum .hero--cinematic .eyebrow::before {
+  background: rgba(243, 216, 184, 0.5);
+  width: 36px;
+}
+.site--platinum .hero--cinematic .hero__loc {
+  color: rgba(253, 250, 242, 0.7);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* CTA pair — stronger platinum primary, glass-like ghost */
+.site--platinum .hero--cinematic .btn--primary {
+  background: #fdfaf2;
+  border-color: #fdfaf2;
+  color: #100c08;
+  padding: 18px 26px;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.site--platinum .hero--cinematic .btn--primary:hover {
+  background: var(--accent-warm);
+  color: #fff;
+  border-color: var(--accent-warm);
+  transform: translateY(-2px);
+}
+.site--platinum .hero--cinematic .btn--ghost {
+  background: rgba(8, 6, 4, 0.35);
+  border-color: rgba(243, 216, 184, 0.4);
+  color: #fdfaf2;
+  padding: 18px 26px;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.site--platinum .hero--cinematic .btn--ghost:hover {
+  background: rgba(253, 250, 242, 0.96);
+  border-color: rgba(253, 250, 242, 0.96);
+  color: var(--text);
+}
+.site--platinum .hero--cinematic .btn--cinema.btn--ghost::after {
+  background: linear-gradient(90deg, rgba(253, 250, 242, 0.96), rgba(243, 216, 184, 0.85));
+}
+
+/* Now-playing — sharper editorial caption block */
+.site--platinum .hero__nowplaying {
+  border-left: 1px solid rgba(243, 216, 184, 0.42);
+  padding-left: 18px;
+}
+
+/* Timeline — re-styled like a film reel chapter index */
+.site--platinum .hero__controls--timeline {
+  align-items: flex-end;
+  margin-top: clamp(20px, 3vh, 36px);
+  padding-top: clamp(20px, 2.8vh, 32px);
+  border-top: 1px solid rgba(243, 216, 184, 0.16);
+}
+.site--platinum .hero__timeline {
+  display: flex;
+  gap: clamp(16px, 2.4vw, 36px);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: none;
+}
+.site--platinum .hero__tlbtn {
+  flex: 1 1 0;
+  min-width: 112px;
+}
+
+/* Hero rail (Scroll indicator) */
+.site--platinum .hero__rail {
+  bottom: 24px;
+  right: var(--pad);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(243, 216, 184, 0.72);
+}
+.site--platinum .hero__rail-line {
+  background: rgba(243, 216, 184, 0.28);
+  width: 72px;
+}
+
+/* Hero overlay — corner metadata (top-right) */
+.site--platinum .hero__topline .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .site--platinum .hero--cinematic .hero__title {
+    font-size: clamp(48px, 14vw, 88px);
+  }
+  .site--platinum .hero__masthead {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+}
+
+/* ============================================================
+   4. MARQUEE — slimmer editorial rail
+   ============================================================ */
+
+.site--platinum .marquee {
+  background: var(--bg-soft);
+  border-block: 1px solid var(--line);
+  padding-block: 24px;
+}
+.site--platinum .marquee__item {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 44px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  gap: 48px;
+}
+.site--platinum .marquee__item:nth-child(even) {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 300;
+  text-transform: none;
+  color: var(--accent-warm);
+  letter-spacing: -0.02em;
+}
+.site--platinum .marquee__dot {
+  color: var(--accent);
+  font-size: 0.6em;
+}
+
+/* ============================================================
+   5. PILLARS — confident grid of five disciplines
+   ============================================================ */
+
+.site--platinum .pillars {
+  padding-block: clamp(96px, 11vw, 168px);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.site--platinum .pillars__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 96px);
+  align-items: end;
+  margin-bottom: clamp(56px, 7vw, 112px);
+}
+.site--platinum .pillars__title {
+  font-family: var(--display);
+  font-size: clamp(54px, 8.4vw, 148px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  margin: 0;
+}
+.site--platinum .pillars__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+}
+.site--platinum .pillars__list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.site--platinum .pillar {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: clamp(32px, 3.4vw, 56px) clamp(24px, 2.6vw, 40px);
+  transition: background 0.5s var(--ease-out);
+}
+.site--platinum .pillar:hover {
+  background: var(--surface);
+}
+.site--platinum .pillar__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(36px, 4vw, 72px);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin-top: 10px;
+}
+
+/* ============================================================
+   6. CINEMATIC REEL — tighter editorial rhythm
+   ============================================================ */
+
+.site--platinum .reel {
+  padding-block: clamp(96px, 11vw, 168px);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-paper) 60%, var(--bg-soft) 100%);
+  border-top: 1px solid var(--line);
+}
+.site--platinum .reel__head {
+  grid-template-columns: 140px 1fr;
+  margin-bottom: clamp(56px, 8vw, 124px);
+}
+.site--platinum .reel__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(46px, 7vw, 116px);
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+}
+.site--platinum .reel__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 300;
+}
+.site--platinum .reel__num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(48px, 5.2vw, 84px);
+  color: var(--accent);
+}
+
+/* ============================================================
+   7. PLATINUM GALLERY (ROOMS) — denser, more present
+   ============================================================ */
+
+.pgallery {
+  padding-block: clamp(96px, 11vw, 168px);
+  background: var(--bg-paper);
+  border-top: 1px solid var(--line);
+}
+.site--platinum .pgallery {
+  background: var(--onyx);
+  color: #fdfaf2;
+  border-color: rgba(243, 216, 184, 0.16);
+}
+.site--platinum .pgallery__head {
+  grid-template-columns: 140px 1fr;
+  gap: clamp(24px, 4vw, 96px);
+  margin-bottom: clamp(48px, 6vw, 96px);
+}
+.site--platinum .pgallery__index {
+  color: rgba(243, 216, 184, 0.72);
+}
+.site--platinum .pgallery__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(48px, 7.4vw, 124px);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  color: #fdfaf2;
+}
+.site--platinum .pgallery__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--accent-soft);
+}
+.site--platinum .pgallery__intro {
+  color: rgba(253, 250, 242, 0.78);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.62;
+}
+.site--platinum .pgallery .eyebrow {
+  color: rgba(243, 216, 184, 0.78);
+}
+.site--platinum .pgallery .eyebrow::before {
+  background: rgba(243, 216, 184, 0.55);
+}
+
+.site--platinum .pgallery__tabs {
+  border-bottom: 1px solid rgba(243, 216, 184, 0.18);
+  gap: 0;
+  margin-bottom: clamp(36px, 5vw, 64px);
+  margin-top: 0;
+}
+.site--platinum .pgallery__tab {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(243, 216, 184, 0.6);
+  padding: 18px 22px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.site--platinum .pgallery__tab:hover {
+  color: #fdfaf2;
+}
+.site--platinum .pgallery__tab[aria-selected='true'] {
+  color: #fdfaf2;
+}
+.site--platinum .pgallery__tab-count {
+  font-size: 9px;
+  color: var(--accent-soft);
+  letter-spacing: 0.22em;
+  font-variant-numeric: tabular-nums;
+}
+.site--platinum .pgallery__tab-rule {
+  background: var(--accent);
+  height: 2px;
+}
+
+.site--platinum .pgallery__stage {
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: clamp(20px, 2.4vw, 36px);
+}
+.site--platinum .pgallery__feature {
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+  background: #050402;
+  box-shadow:
+    0 40px 120px -60px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(243, 216, 184, 0.04);
+}
+.site--platinum .pgallery__feature img,
+.site--platinum .pgallery__feature video,
+.site--platinum .pgallery__cell img,
+.site--platinum .pgallery__cell video {
+  filter: saturate(0.96) contrast(1.05) brightness(0.98);
+}
+.site--platinum .pgallery__support {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 36px);
+}
+.site--platinum .pgallery__cell {
+  aspect-ratio: auto;
+  height: 100%;
+  border-radius: 2px;
+  background: #050402;
+  box-shadow:
+    0 28px 60px -40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(243, 216, 184, 0.04);
+}
+
+/* Always-visible caption — editorial */
+.site--platinum .pgallery__cap {
+  opacity: 1;
+  transform: none;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 6, 4, 0.75) 100%);
+  margin: 0;
+  padding: 60px 0 0;
+}
+.site--platinum .pgallery__cap-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 28px);
+  letter-spacing: -0.012em;
+  color: #fdfaf2;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+}
+.site--platinum .pgallery__cap-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  color: var(--accent-soft);
+}
+.site--platinum .pgallery__tint {
+  background: linear-gradient(180deg, rgba(8, 6, 4, 0) 38%, rgba(8, 6, 4, 0.55) 100%);
+  opacity: 0.7;
+}
+.site--platinum .pgallery__feature:hover .pgallery__tint,
+.site--platinum .pgallery__cell:hover .pgallery__tint {
+  opacity: 0.95;
+}
+.site--platinum .pgallery__feature:hover img,
+.site--platinum .pgallery__feature:hover video,
+.site--platinum .pgallery__cell:hover img,
+.site--platinum .pgallery__cell:hover video {
+  transform: scale(1.05);
+}
+
+/* Room marker — small "ROOM 0X" badge over the feature */
+.site--platinum .pgallery__roomtag {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 242, 0.92);
+  padding: 8px 12px;
+  border: 1px solid rgba(243, 216, 184, 0.4);
+  border-radius: 999px;
+  background: rgba(8, 6, 4, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+.site--platinum .pgallery__roomtag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+  box-shadow: 0 0 0 3px rgba(216, 138, 53, 0.2);
+}
+
+@media (max-width: 980px) {
+  .site--platinum .pgallery__stage { grid-template-columns: 1fr; }
+  .site--platinum .pgallery__feature { aspect-ratio: 4 / 5; }
+  .site--platinum .pgallery__support {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .site--platinum .pgallery__cell { aspect-ratio: 4 / 5; }
+}
+@media (max-width: 640px) {
+  .site--platinum .pgallery__support { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   8. AWARDS RAIL — interlude band
+   ============================================================ */
+
+.site--platinum .awards {
+  background: var(--bg-soft);
+  border-block: 1px solid var(--line);
+  padding-block: clamp(72px, 9vw, 124px);
+}
+.site--platinum .awards__strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(28px, 3vw, 56px);
+  margin-top: 24px;
+}
+.site--platinum .awards__item {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 26px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.site--platinum .awards__item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(198, 146, 83, 0.18);
+}
+
+/* ============================================================
+   9. PROCESS & SERVICES — calmer editorial rows
+   ============================================================ */
+
+.site--platinum .process,
+.site--platinum .services {
+  padding-block: clamp(96px, 11vw, 168px);
+  background: var(--bg-paper);
+  border-top: 1px solid var(--line);
+}
+.site--platinum .services {
+  background: var(--bg);
+}
+.site--platinum .process__title,
+.site--platinum .services__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(44px, 6.4vw, 108px);
+  letter-spacing: -0.034em;
+  line-height: 0.95;
+}
+.site--platinum .process__title em,
+.site--platinum .services__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 300;
+}
+
+/* ============================================================
+   10. RAIL (Quote interlude) — onyx cinematic break
+   ============================================================ */
+
+.site--platinum .rail--onyx {
+  background: var(--onyx);
+  color: #fdfaf2;
+  border-color: rgba(243, 216, 184, 0.16);
+}
+.site--platinum .rail--onyx .eyebrow {
+  color: rgba(243, 216, 184, 0.72);
+}
+.site--platinum .rail--onyx .eyebrow::before {
+  background: rgba(243, 216, 184, 0.55);
+}
+.site--platinum .rail--onyx .rail__quote {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(32px, 5.2vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: #fdfaf2;
+  margin-block: 32px 32px;
+  max-width: 24ch;
+}
+.site--platinum .rail--onyx .rail__attrib {
+  border-color: rgba(243, 216, 184, 0.18);
+  color: rgba(253, 250, 242, 0.78);
+}
+.site--platinum .rail--onyx .rail__attrib > span:first-child {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 32px);
+  letter-spacing: -0.012em;
+  color: #fdfaf2;
+}
+.site--platinum .rail--onyx .rail__attrib > span:last-child {
+  color: rgba(243, 216, 184, 0.72);
+}
+.site--platinum .rail--onyx .rail__logos {
+  border-color: rgba(243, 216, 184, 0.18);
+}
+.site--platinum .rail--onyx .rail__logos span {
+  color: rgba(253, 250, 242, 0.7);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 24px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: color 0.4s var(--ease-out);
+}
+.site--platinum .rail--onyx .rail__logos span:hover {
+  color: var(--accent-soft);
+}
+
+/* ============================================================
+   11. CONTACT — premium close
+   ============================================================ */
+
+.site--platinum .contact {
+  background: var(--bg-paper);
+  padding-block: clamp(96px, 11vw, 168px);
+  border-top: 1px solid var(--line);
+}
+.site--platinum .contact__title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(54px, 8.6vw, 168px);
+  line-height: 0.92;
+  letter-spacing: -0.038em;
+}
+.site--platinum .contact__title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  font-weight: 300;
+}
+
+/* ============================================================
+   12. FOOTER — monogram + scaled wordmark
+   ============================================================ */
+
+.site--platinum .footer {
+  background: var(--onyx);
+  color: #fdfaf2;
+}
+.site--platinum .footer__monogram {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 32px);
+  padding-block: clamp(32px, 4vw, 56px);
+  border-bottom: 1px solid rgba(243, 216, 184, 0.18);
+  margin-bottom: clamp(40px, 6vw, 88px);
+}
+.site--platinum .footer__monogram-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(243, 216, 184, 0), rgba(243, 216, 184, 0.4) 50%, rgba(243, 216, 184, 0));
+}
+.site--platinum .footer__monogram-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: rgba(243, 216, 184, 0.92);
+  font-weight: 500;
+}
+.site--platinum .footer__monogram-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+  box-shadow: 0 0 0 4px rgba(216, 138, 53, 0.18);
+}
+.site--platinum .footer__big {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(72px, 17vw, 320px);
+  letter-spacing: -0.04em;
+  line-height: 0.86;
+  color: rgba(253, 250, 242, 0.96);
+  margin-bottom: clamp(40px, 6vw, 80px);
+  display: flex;
+  align-items: baseline;
+  gap: clamp(16px, 2vw, 36px);
+  flex-wrap: wrap;
+}
+.site--platinum .footer__big span:nth-child(2) {
+  color: var(--accent);
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+}
+.site--platinum .footer__big span:nth-child(3) {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  color: var(--accent-soft);
+}
+.site--platinum .footer .eyebrow {
+  color: rgba(243, 216, 184, 0.72);
+}
+.site--platinum .footer .eyebrow::before {
+  background: rgba(243, 216, 184, 0.5);
+}
+.site--platinum .footer__cols a {
+  color: rgba(253, 250, 242, 0.86);
+  transition: color 0.3s var(--ease-out);
+}
+.site--platinum .footer__cols a:hover {
+  color: var(--accent-soft);
+}
+.site--platinum .footer__legal {
+  color: rgba(253, 250, 242, 0.6);
+  border-color: rgba(243, 216, 184, 0.16);
+}
+
+/* ============================================================
+   12.5. SECTION DIVIDERS — thin platinum rules
+   ============================================================ */
+
+.site--platinum .pillars + .reel,
+.site--platinum .reel + .pgallery,
+.site--platinum .pgallery + .awards,
+.site--platinum .awards + .process,
+.site--platinum .process + .services,
+.site--platinum .services + .rail,
+.site--platinum .rail + .contact {
+  position: relative;
+}
+.site--platinum .pgallery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--pad);
+  right: var(--pad);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243, 216, 184, 0.42) 30%, rgba(243, 216, 184, 0.42) 70%, transparent);
+  pointer-events: none;
+}
+
+/* ============================================================
+   13. SCROLL MOTION — horizontal drift, fade depth
+   ============================================================ */
+
+/* Gallery feature drifts horizontally as user scrolls */
+.site--platinum .pgallery__stage[data-parallax] {
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+}
+
+/* Hero title gently fades and lifts as user scrolls past */
+.site--platinum .hero[data-scroll-fade] .hero__title,
+.site--platinum .hero[data-scroll-fade] .hero__lede {
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+/* Section headers fade out as media leaves viewport */
+.site--platinum .reel__head[data-scroll-fade] {
+  opacity: calc(0.5 + var(--enter, 0) * 0.5);
+}
+
+/* Pillar staggered reveal */
+.site--platinum .pillars__list .pillar {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+.site--platinum .pillars__list .pillar:nth-child(1) { transition-delay: 0.04s; }
+.site--platinum .pillars__list .pillar:nth-child(2) { transition-delay: 0.12s; }
+.site--platinum .pillars__list .pillar:nth-child(3) { transition-delay: 0.20s; }
+.site--platinum .pillars__list .pillar:nth-child(4) { transition-delay: 0.28s; }
+.site--platinum .pillars__list .pillar:nth-child(5) { transition-delay: 0.36s; }
+.site--platinum .pillars__list .pillar.reveal-in,
+.site--platinum .pillars.is-in .pillars__list .pillar {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .site--platinum .pillars__list .pillar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

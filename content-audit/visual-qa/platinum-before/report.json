@@ -1,0 +1,183 @@
+{
+  "site": "platinum",
+  "label": "Platinum FMD",
+  "generatedAt": "2026-05-17T07:20:56.908Z",
+  "previewUrl": "http://localhost:4173/",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "stats": {
+        "docWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide  is-fwd (right=433)",
+          "img.hero__media (right=433)",
+          "div.hero__slide-tint (right=433)",
+          "div.hero__slide  is-fwd (right=433)",
+          "img.hero__media (right=433)",
+          "div.hero__slide-tint (right=433)"
+        ],
+        "hero": {
+          "w": 390,
+          "h": 916
+        },
+        "heroMedia": {
+          "w": 390,
+          "h": 916
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/platinum/mobile-fold.png",
+        "content-audit/visual-qa/platinum/mobile-full.png"
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "stats": {
+        "docWidth": 820,
+        "viewportWidth": 820,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide  is-fwd (right=910)",
+          "img.hero__media (right=910)",
+          "div.hero__slide-tint (right=910)",
+          "div.hero__slide  is-fwd (right=910)",
+          "img.hero__media (right=910)",
+          "div.hero__slide-tint (right=910)"
+        ],
+        "hero": {
+          "w": 820,
+          "h": 1180
+        },
+        "heroMedia": {
+          "w": 820,
+          "h": 1180
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/platinum/tablet-fold.png",
+        "content-audit/visual-qa/platinum/tablet-full.png"
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 800,
+      "stats": {
+        "docWidth": 1280,
+        "viewportWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide  is-fwd (right=1421)",
+          "img.hero__media (right=1421)",
+          "div.hero__slide-tint (right=1421)",
+          "div.hero__slide  is-fwd (right=1421)",
+          "img.hero__media (right=1421)",
+          "div.hero__slide-tint (right=1421)"
+        ],
+        "hero": {
+          "w": 1280,
+          "h": 801
+        },
+        "heroMedia": {
+          "w": 1280,
+          "h": 801
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/platinum/laptop-fold.png",
+        "content-audit/visual-qa/platinum/laptop-full.png"
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "stats": {
+        "docWidth": 1440,
+        "viewportWidth": 1440,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide  is-fwd (right=1598)",
+          "img.hero__media (right=1598)",
+          "div.hero__slide-tint (right=1598)",
+          "div.hero__slide  is-fwd (right=1598)",
+          "img.hero__media (right=1598)",
+          "div.hero__slide-tint (right=1598)"
+        ],
+        "hero": {
+          "w": 1440,
+          "h": 900
+        },
+        "heroMedia": {
+          "w": 1440,
+          "h": 900
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/platinum/desktop-fold.png",
+        "content-audit/visual-qa/platinum/desktop-full.png"
+      ]
+    },
+    {
+      "name": "large-desktop",
+      "width": 1920,
+      "height": 1080,
+      "stats": {
+        "docWidth": 1920,
+        "viewportWidth": 1920,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide  is-fwd (right=2131)",
+          "img.hero__media (right=2131)",
+          "div.hero__slide-tint (right=2131)",
+          "div.hero__slide  is-fwd (right=2131)",
+          "img.hero__media (right=2131)",
+          "div.hero__slide-tint (right=2131)"
+        ],
+        "hero": {
+          "w": 1920,
+          "h": 1080
+        },
+        "heroMedia": {
+          "w": 1920,
+          "h": 1080
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/platinum/large-desktop-fold.png",
+        "content-audit/visual-qa/platinum/large-desktop-full.png"
+      ]
+    }
+  ]
+}

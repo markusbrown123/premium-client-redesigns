@@ -1,0 +1,183 @@
+{
+  "site": "steve-giralt",
+  "label": "Steve Giralt",
+  "generatedAt": "2026-05-17T07:37:11.373Z",
+  "previewUrl": "http://localhost:4174/",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "stats": {
+        "docWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__stage hero__stage--slide (right=397)",
+          "div.hero__slide is-active is-fwd (right=410)",
+          "video.hero__media (right=410)",
+          "div.hero__slide-tint (right=410)",
+          "div.hero__slide  is-fwd (right=410)",
+          "img.hero__media (right=410)"
+        ],
+        "hero": {
+          "w": 390,
+          "h": 1195
+        },
+        "heroMedia": {
+          "w": 404,
+          "h": 1237
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/steve-giralt/mobile-fold.png",
+        "content-audit/visual-qa/steve-giralt/mobile-full.png"
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "stats": {
+        "docWidth": 820,
+        "viewportWidth": 820,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide is-active is-fwd (right=849)",
+          "video.hero__media (right=849)",
+          "div.hero__slide-tint (right=849)",
+          "div.hero__slide  is-fwd (right=849)",
+          "img.hero__media (right=849)",
+          "div.hero__slide-tint (right=849)"
+        ],
+        "hero": {
+          "w": 820,
+          "h": 1180
+        },
+        "heroMedia": {
+          "w": 849,
+          "h": 1221
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/steve-giralt/tablet-fold.png",
+        "content-audit/visual-qa/steve-giralt/tablet-full.png"
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 800,
+      "stats": {
+        "docWidth": 1280,
+        "viewportWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide is-active is-fwd (right=1325)",
+          "video.hero__media (right=1325)",
+          "div.hero__slide-tint (right=1325)",
+          "div.hero__slide  is-fwd (right=1325)",
+          "img.hero__media (right=1325)",
+          "div.hero__slide-tint (right=1325)"
+        ],
+        "hero": {
+          "w": 1280,
+          "h": 800
+        },
+        "heroMedia": {
+          "w": 1325,
+          "h": 828
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/steve-giralt/laptop-fold.png",
+        "content-audit/visual-qa/steve-giralt/laptop-full.png"
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "stats": {
+        "docWidth": 1440,
+        "viewportWidth": 1440,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide is-active is-fwd (right=1491)",
+          "video.hero__media (right=1491)",
+          "div.hero__slide-tint (right=1491)",
+          "div.hero__slide  is-fwd (right=1491)",
+          "img.hero__media (right=1491)",
+          "div.hero__slide-tint (right=1491)"
+        ],
+        "hero": {
+          "w": 1440,
+          "h": 900
+        },
+        "heroMedia": {
+          "w": 1490,
+          "h": 932
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/steve-giralt/desktop-fold.png",
+        "content-audit/visual-qa/steve-giralt/desktop-full.png"
+      ]
+    },
+    {
+      "name": "large-desktop",
+      "width": 1920,
+      "height": 1080,
+      "stats": {
+        "docWidth": 1920,
+        "viewportWidth": 1920,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.hero__slide is-active is-fwd (right=1988)",
+          "video.hero__media (right=1988)",
+          "div.hero__slide-tint (right=1988)",
+          "div.hero__slide  is-fwd (right=1988)",
+          "img.hero__media (right=1988)",
+          "div.hero__slide-tint (right=1988)"
+        ],
+        "hero": {
+          "w": 1920,
+          "h": 1080
+        },
+        "heroMedia": {
+          "w": 1987,
+          "h": 1118
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/steve-giralt/large-desktop-fold.png",
+        "content-audit/visual-qa/steve-giralt/large-desktop-full.png"
+      ]
+    }
+  ]
+}

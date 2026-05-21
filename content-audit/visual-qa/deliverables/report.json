@@ -1,0 +1,183 @@
+{
+  "site": "deliverables",
+  "label": "The Deliverables",
+  "generatedAt": "2026-05-17T07:53:09.920Z",
+  "previewUrl": "http://localhost:4175/",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "stats": {
+        "docWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.marquee__track (right=5476)",
+          "span.marquee__item (right=662)",
+          "span. (right=604)",
+          "span.marquee__dot (right=662)",
+          "span.marquee__item (right=1396)",
+          "span. (right=1338)"
+        ],
+        "hero": {
+          "w": 390,
+          "h": 1531
+        },
+        "heroMedia": {
+          "w": 343,
+          "h": 428
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/deliverables/mobile-fold.png",
+        "content-audit/visual-qa/deliverables/mobile-full.png"
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "stats": {
+        "docWidth": 820,
+        "viewportWidth": 820,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.marquee__track (right=5520)",
+          "span.marquee__item (right=1440)",
+          "span. (right=1382)",
+          "span.marquee__dot (right=1440)",
+          "span.marquee__item (right=2130)",
+          "span. (right=2072)"
+        ],
+        "hero": {
+          "w": 820,
+          "h": 1346
+        },
+        "heroMedia": {
+          "w": 369,
+          "h": 573
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/deliverables/tablet-fold.png",
+        "content-audit/visual-qa/deliverables/tablet-full.png"
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 800,
+      "stats": {
+        "docWidth": 1280,
+        "viewportWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.marquee__track (right=7984)",
+          "span.marquee__item (right=2122)",
+          "span. (right=2058)",
+          "span.marquee__dot (right=2122)",
+          "span.marquee__item (right=3141)",
+          "span. (right=3078)"
+        ],
+        "hero": {
+          "w": 1280,
+          "h": 1379
+        },
+        "heroMedia": {
+          "w": 576,
+          "h": 458
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/deliverables/laptop-fold.png",
+        "content-audit/visual-qa/deliverables/laptop-full.png"
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "stats": {
+        "docWidth": 1440,
+        "viewportWidth": 1440,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.marquee__track (right=8658)",
+          "span.marquee__item (right=2281)",
+          "span. (right=2216)",
+          "span.marquee__dot (right=2281)",
+          "span.marquee__item (right=3396)",
+          "span. (right=3331)"
+        ],
+        "hero": {
+          "w": 1440,
+          "h": 1592
+        },
+        "heroMedia": {
+          "w": 648,
+          "h": 516
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/deliverables/desktop-fold.png",
+        "content-audit/visual-qa/deliverables/desktop-full.png"
+      ]
+    },
+    {
+      "name": "large-desktop",
+      "width": 1920,
+      "height": 1080,
+      "stats": {
+        "docWidth": 1920,
+        "viewportWidth": 1920,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.marquee__track (right=8647)",
+          "span.marquee__item (right=2270)",
+          "span. (right=2205)",
+          "span.marquee__dot (right=2270)",
+          "span.marquee__item (right=3385)",
+          "span. (right=3320)"
+        ],
+        "hero": {
+          "w": 1920,
+          "h": 1732
+        },
+        "heroMedia": {
+          "w": 864,
+          "h": 619
+        },
+        "heroHasMedia": true,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/deliverables/large-desktop-fold.png",
+        "content-audit/visual-qa/deliverables/large-desktop-full.png"
+      ]
+    }
+  ]
+}
