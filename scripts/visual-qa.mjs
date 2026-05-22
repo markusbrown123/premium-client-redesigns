@@ -33,6 +33,7 @@ const SITES = {
   platinum: { outDir: 'dist/platinum', port: 4173, label: 'Platinum FMD' },
   'steve-giralt': { outDir: 'dist/steve-giralt', port: 4174, label: 'Steve Giralt' },
   deliverables: { outDir: 'dist/deliverables', port: 4175, label: 'The Deliverables' },
+  'a1-sealcoating': { outDir: 'dist/a1-sealcoating', port: 4176, label: 'A-1 Sealcoating' },
 }
 
 const VIEWPORTS = [

@@ -1,16 +1,16 @@
-import { PHOTOS, srcset } from '../a1Data'
-
-// Pick 3 distinct featured shots for the editorial "magazine spread" layout.
-const PICKS = ['brick-colonial-jet-black-wide', 'estate-cobblestone-apron', 'coastal-mansion-finished']
+import { PHOTOS, srcset, FEATURED_PICKS } from '../a1Data'
 
 export function A1FeaturedWork() {
-  const [lead, ...side] = PICKS.map((slug) => PHOTOS.find((p) => p.slug === slug)!).filter(Boolean)
+  const lead = PHOTOS.find((p) => p.slug === FEATURED_PICKS.lead)
+  const side = FEATURED_PICKS.tiles
+    .map((slug) => PHOTOS.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
   if (!lead) return null
   const ls = srcset(lead.slug)
 
   return (
     <section className="a1-section a1-featured" id="featured">
-      <div className="a1-container a1-container--wide">
+      <div className="a1-container a1-container--media">
         <header className="a1-section__head">
           <div className="a1-section__head-title a1-reveal">
             <span className="a1-eyebrow">03 — Featured Work</span>
@@ -27,7 +27,13 @@ export function A1FeaturedWork() {
           <a className="a1-featured__lead" href="#work" aria-label="See more work">
             <picture>
               <source type="image/webp" srcSet={`${ls.webp1280} 1280w, ${ls.webp1920} 1920w`} sizes="(max-width: 880px) 100vw, 60vw" />
-              <img src={ls.jpg1920} alt={lead.alt} loading="lazy" decoding="async" />
+              <img
+                src={ls.jpg1920}
+                alt={lead.alt}
+                loading="lazy"
+                decoding="async"
+                style={lead.focal?.wide ? { objectPosition: lead.focal.wide } : undefined}
+              />
             </picture>
             <div className="a1-featured__caption">
               <div>
@@ -43,7 +49,13 @@ export function A1FeaturedWork() {
                 <a className="a1-featured__tile" href="#work" key={p.slug} aria-label={p.alt}>
                   <picture>
                     <source type="image/webp" srcSet={`${s.webp640} 640w, ${s.webp1280} 1280w`} sizes="(max-width: 880px) 100vw, 30vw" />
-                    <img src={s.jpg1920} alt={p.alt} loading="lazy" decoding="async" />
+                    <img
+                      src={s.jpg1920}
+                      alt={p.alt}
+                      loading="lazy"
+                      decoding="async"
+                      style={p.focal?.card ? { objectPosition: p.focal.card } : undefined}
+                    />
                   </picture>
                 </a>
               )

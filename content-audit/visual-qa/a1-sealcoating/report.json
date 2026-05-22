@@ -1,0 +1,153 @@
+{
+  "site": "a1-sealcoating",
+  "label": "A-1 Sealcoating",
+  "generatedAt": "2026-05-22T05:31:34.802Z",
+  "previewUrl": "http://localhost:4176/",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "stats": {
+        "docWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.a1-hero__slide is-active is-drifting (right=410)",
+          "picture. (right=410)",
+          "img.a1-hero__img (right=410)",
+          "div.a1-hero__slide   (right=402)",
+          "picture. (right=402)",
+          "img.a1-hero__img (right=402)"
+        ],
+        "hero": null,
+        "heroMedia": null,
+        "heroHasMedia": false,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/a1-sealcoating/mobile-fold.png",
+        "content-audit/visual-qa/a1-sealcoating/mobile-full.png"
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "stats": {
+        "docWidth": 820,
+        "viewportWidth": 820,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.a1-hero__slide is-active is-drifting (right=861)",
+          "picture. (right=861)",
+          "img.a1-hero__img (right=861)",
+          "div.a1-hero__slide   (right=845)",
+          "picture. (right=845)",
+          "img.a1-hero__img (right=845)"
+        ],
+        "hero": null,
+        "heroMedia": null,
+        "heroHasMedia": false,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/a1-sealcoating/tablet-fold.png",
+        "content-audit/visual-qa/a1-sealcoating/tablet-full.png"
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 800,
+      "stats": {
+        "docWidth": 1280,
+        "viewportWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.a1-hero__slide is-active is-drifting (right=1344)",
+          "picture. (right=1344)",
+          "img.a1-hero__img (right=1344)",
+          "div.a1-hero__slide   (right=1318)",
+          "picture. (right=1318)",
+          "img.a1-hero__img (right=1318)"
+        ],
+        "hero": null,
+        "heroMedia": null,
+        "heroHasMedia": false,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/a1-sealcoating/laptop-fold.png",
+        "content-audit/visual-qa/a1-sealcoating/laptop-full.png"
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "stats": {
+        "docWidth": 1440,
+        "viewportWidth": 1440,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.a1-hero__slide is-active is-drifting (right=1512)",
+          "picture. (right=1512)",
+          "img.a1-hero__img (right=1512)",
+          "div.a1-hero__slide   (right=1483)",
+          "picture. (right=1483)",
+          "img.a1-hero__img (right=1483)"
+        ],
+        "hero": null,
+        "heroMedia": null,
+        "heroHasMedia": false,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/a1-sealcoating/desktop-fold.png",
+        "content-audit/visual-qa/a1-sealcoating/desktop-full.png"
+      ]
+    },
+    {
+      "name": "large-desktop",
+      "width": 1920,
+      "height": 1080,
+      "stats": {
+        "docWidth": 1920,
+        "viewportWidth": 1920,
+        "horizontalOverflow": false,
+        "overflowAmount": 0,
+        "overflowingExamples": [
+          "div.a1-hero__slide is-active is-drifting (right=2016)",
+          "picture. (right=2016)",
+          "img.a1-hero__img (right=2016)",
+          "div.a1-hero__slide   (right=1978)",
+          "picture. (right=1978)",
+          "img.a1-hero__img (right=1978)"
+        ],
+        "hero": null,
+        "heroMedia": null,
+        "heroHasMedia": false,
+        "hasFallbackPlaceholder": false,
+        "hasContact": true
+      },
+      "consoleErrors": [],
+      "files": [
+        "content-audit/visual-qa/a1-sealcoating/large-desktop-fold.png",
+        "content-audit/visual-qa/a1-sealcoating/large-desktop-full.png"
+      ]
+    }
+  ]
+}

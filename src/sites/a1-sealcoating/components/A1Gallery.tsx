@@ -4,11 +4,15 @@ import { Close, ChevLeft, ChevRight } from './A1Icons'
 
 type Filter = (typeof CATEGORIES)[number]['id']
 
-// Decide a tile size based on the photo + index, so the masonry layout
-// stays photo-led (landscapes get wider tiles, portraits stay tall).
+// Photo-led tile sizing: the first item anchors as a feature; landscape shots
+// always take a wide tile so they read as landscape; everything else stays as
+// the default portrait. We dropped the i%6==2 "tall" promotion — with the
+// fixed grid-auto-rows model it was reshuffling row gaps on every filter
+// change. Tall is still available for hand-curated standout shots if we want
+// to re-introduce it later.
 function tileClass(p: A1Photo, i: number): string {
+  if (i === 0) return 'a1-gallery__item a1-gallery__item--feature'
   if (p.orientation === 'landscape') return 'a1-gallery__item a1-gallery__item--wide'
-  if (i % 5 === 0) return 'a1-gallery__item a1-gallery__item--tall'
   return 'a1-gallery__item'
 }
 
@@ -17,8 +21,18 @@ export function A1Gallery() {
   const [lightbox, setLightbox] = useState<number | null>(null)
 
   const filtered = useMemo(() => {
-    if (filter === 'all') return PHOTOS
-    return PHOTOS.filter((p) => p.category === filter)
+    const base = filter === 'all' ? PHOTOS : PHOTOS.filter((p) => p.category === filter)
+    if (base.length < 2) return base
+    // Sort for the 12-col + row-span grid. Anchor stays first (becomes the
+    // span-8/row-span-3 feature). Landscapes follow because their wide+short
+    // cells (span 6/row-span 2) pair into clean 2-up rows. Portraits trail and
+    // pack 3-per-row (span 4/row-span 3). With grid-auto-flow: dense, the
+    // earliest portrait drops into the 4-col gap next to the feature so the
+    // first row reads as feature + portrait with no hole.
+    const [anchor, ...rest] = base
+    const landscapes = rest.filter((p) => p.orientation === 'landscape')
+    const portraits = rest.filter((p) => p.orientation === 'portrait')
+    return [anchor, ...landscapes, ...portraits]
   }, [filter])
 
   const close = useCallback(() => setLightbox(null), [])
@@ -43,7 +57,7 @@ export function A1Gallery() {
 
   return (
     <section className="a1-section a1-gallery" id="work">
-      <div className="a1-container">
+      <div className="a1-container a1-container--media">
         <header className="a1-section__head">
           <div className="a1-section__head-title a1-reveal">
             <span className="a1-eyebrow">04 — The Gallery</span>
@@ -82,7 +96,13 @@ export function A1Gallery() {
               >
                 <picture>
                   <source type="image/webp" srcSet={`${s.webp640} 640w, ${s.webp1280} 1280w`} sizes="(max-width: 880px) 50vw, 33vw" />
-                  <img src={s.jpg640} alt={p.alt} loading="lazy" decoding="async" />
+                  <img
+                    src={s.jpg640}
+                    alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
+                    style={p.focal?.card ? { objectPosition: p.focal.card } : undefined}
+                  />
                 </picture>
                 <div className="a1-gallery__item-caption">
                   {CATEGORIES.find((c) => c.id === p.category)?.label ?? p.category}

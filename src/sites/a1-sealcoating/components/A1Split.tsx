@@ -1,7 +1,10 @@
 import { PHOTOS, srcset } from '../a1Data'
 
 const RES_SLUG = 'gray-colonial-curved-drive'
-const COM_SLUG = 'trailer-truck-at-estate'
+// Use the coastal-mansion equipment shot for commercial — the trailer/truck
+// at estate runs in Equipment now; keeping a different image here gives the
+// section more visual variety.
+const COM_SLUG = 'coastal-mansion-equipment'
 
 export function A1Split() {
   const res = PHOTOS.find((p) => p.slug === RES_SLUG)!
@@ -11,7 +14,7 @@ export function A1Split() {
 
   return (
     <section className="a1-section a1-split" aria-label="Residential and commercial asphalt">
-      <div className="a1-container">
+      <div className="a1-container a1-container--wide">
         <header className="a1-section__head">
           <div className="a1-section__head-title a1-reveal">
             <span className="a1-eyebrow">07 — Who we work for</span>
@@ -25,7 +28,13 @@ export function A1Split() {
           <article className="a1-split__card a1-reveal">
             <picture>
               <source type="image/webp" srcSet={`${rs.webp1280} 1280w, ${rs.webp1920} 1920w`} sizes="(max-width: 880px) 100vw, 50vw" />
-              <img src={rs.jpg1920} alt={res.alt} loading="lazy" decoding="async" />
+              <img
+                src={rs.jpg1920}
+                alt={res.alt}
+                loading="lazy"
+                decoding="async"
+                style={res.focal?.wide ? { objectPosition: res.focal.wide } : undefined}
+              />
             </picture>
             <div className="a1-split__content">
               <h3 className="a1-split__title">Residential</h3>
@@ -43,7 +52,13 @@ export function A1Split() {
           <article className="a1-split__card a1-reveal a1-reveal--right">
             <picture>
               <source type="image/webp" srcSet={`${cs.webp1280} 1280w, ${cs.webp1920} 1920w`} sizes="(max-width: 880px) 100vw, 50vw" />
-              <img src={cs.jpg1920} alt={com.alt} loading="lazy" decoding="async" />
+              <img
+                src={cs.jpg1920}
+                alt={com.alt}
+                loading="lazy"
+                decoding="async"
+                style={com.focal?.wide ? { objectPosition: com.focal.wide } : undefined}
+              />
             </picture>
             <div className="a1-split__content">
               <h3 className="a1-split__title">Commercial</h3>

@@ -23,6 +23,11 @@ export type A1Photo = {
   orientation: 'portrait' | 'landscape'
   heroEligible: boolean
   featured: boolean
+  // Per-image art direction. CSS object-position string applied when the image
+  // is forced into a different aspect than its native (i.e. hero 16/9 cover of a
+  // portrait shot). Vertical % is what matters: lower keeps house in frame,
+  // higher pushes toward the driveway/foreground.
+  focal: { hero?: string; card?: string; wide?: string }
 }
 
 const base = '/media/a1-sealcoating/optimized'
@@ -35,6 +40,7 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'portrait',
     heroEligible: true,
     featured: true,
+    focal: { hero: 'center 62%', card: 'center 58%', wide: 'center 60%' },
   },
   {
     slug: 'gray-colonial-curved-drive',
@@ -43,22 +49,25 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'portrait',
     heroEligible: true,
     featured: true,
+    focal: { hero: 'center 45%', card: 'center 45%', wide: 'center 42%' },
   },
   {
     slug: 'estate-cobblestone-apron',
     alt: 'Sealcoated driveway leading to an estate home with cobblestone apron and A-1 Sealcoating branded caution tape.',
     category: 'premium-homes',
     orientation: 'portrait',
-    heroEligible: true,
+    heroEligible: false,
     featured: true,
+    focal: { hero: 'center 50%', card: 'center 45%', wide: 'center 40%' },
   },
   {
     slug: 'blue-colonial-long-drive',
     alt: 'Long curved residential driveway leading up to a blue colonial home, freshly sealcoated.',
     category: 'residential',
     orientation: 'portrait',
-    heroEligible: true,
+    heroEligible: false,
     featured: false,
+    focal: { hero: 'center 45%', card: 'center 40%', wide: 'center 40%' },
   },
   {
     slug: 'coastal-mansion-equipment',
@@ -67,6 +76,7 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'portrait',
     heroEligible: false,
     featured: false,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 45%' },
   },
   {
     slug: 'coastal-mansion-finished',
@@ -75,6 +85,7 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'portrait',
     heroEligible: true,
     featured: true,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
   },
   {
     slug: 'brick-colonial-jet-black-wide',
@@ -83,6 +94,7 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'landscape',
     heroEligible: true,
     featured: true,
+    focal: { hero: 'center 60%', card: 'center 55%', wide: 'center 58%' },
   },
   {
     slug: 'modern-estate-curved-drive',
@@ -91,6 +103,7 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'landscape',
     heroEligible: true,
     featured: true,
+    focal: { hero: 'center 55%', card: 'center 55%', wide: 'center 55%' },
   },
   {
     slug: 'trailer-truck-at-estate',
@@ -99,22 +112,25 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'landscape',
     heroEligible: false,
     featured: false,
+    focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 50%' },
   },
   {
     slug: 'dusk-fresh-seal-crepe-myrtle',
     alt: 'Freshly sealcoated jet-black driveway at dusk, framed by blooming crepe myrtle trees.',
     category: 'sealcoating',
     orientation: 'portrait',
-    heroEligible: true,
+    heroEligible: false,
     featured: false,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
   },
   {
     slug: 'hilltop-estate-pillared-entry',
     alt: 'Long sealcoated driveway leading up to a hilltop estate with pillared entrance posts.',
     category: 'premium-homes',
     orientation: 'landscape',
-    heroEligible: true,
+    heroEligible: false,
     featured: false,
+    focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 50%' },
   },
   {
     slug: 'crew-on-the-job-residential',
@@ -123,6 +139,8 @@ export const PHOTOS: A1Photo[] = [
     orientation: 'portrait',
     heroEligible: false,
     featured: false,
+    // Push subject toward top so the dark vehicle interior at the bottom is cropped.
+    focal: { hero: 'center 35%', card: 'center 32%', wide: 'center 30%' },
   },
 ]
 
@@ -136,14 +154,39 @@ export function srcset(slug: string): { webp1920: string; webp1280: string; webp
   }
 }
 
-// Curated rotation for the hero. Prioritizes landscape + premium variety.
+// Curated rotation for the hero. Five strongest shots — clear driveway shape,
+// strong curb appeal, premium property context. Landscape leads so the 16/9
+// hero crop is honest about each frame.
 export const HERO_ROTATION = [
   'brick-colonial-jet-black-wide',
   'modern-estate-curved-drive',
-  'hilltop-estate-pillared-entry',
-  'stucco-mansion-fresh-seal',
   'coastal-mansion-finished',
   'gray-colonial-curved-drive',
+  'stucco-mansion-fresh-seal',
+]
+
+// Featured Work — magazine spread: one wide lead + two tiles.
+// Lead is the strongest wide shot. Tiles balance landscape + portrait detail.
+export const FEATURED_PICKS = {
+  lead: 'modern-estate-curved-drive',
+  tiles: ['brick-colonial-jet-black-wide', 'estate-cobblestone-apron'],
+}
+
+// Project reel — alternate landscape/portrait; the strongest premium shots
+// front-load so a quick scan reads as "premium driveway work".
+export const REEL_ORDER = [
+  'brick-colonial-jet-black-wide',
+  'stucco-mansion-fresh-seal',
+  'modern-estate-curved-drive',
+  'gray-colonial-curved-drive',
+  'hilltop-estate-pillared-entry',
+  'coastal-mansion-finished',
+  'trailer-truck-at-estate',
+  'estate-cobblestone-apron',
+  'dusk-fresh-seal-crepe-myrtle',
+  'blue-colonial-long-drive',
+  'coastal-mansion-equipment',
+  'crew-on-the-job-residential',
 ]
 
 export type Service = {

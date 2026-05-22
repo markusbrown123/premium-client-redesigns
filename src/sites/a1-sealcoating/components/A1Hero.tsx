@@ -45,6 +45,7 @@ export function A1Hero() {
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'auto'}
                   decoding="async"
+                  style={slide.focal?.hero ? { objectPosition: slide.focal.hero } : undefined}
                 />
               </picture>
             </div>
@@ -54,10 +55,10 @@ export function A1Hero() {
       </div>
 
       <div className="a1-hero__content">
-        <div className="a1-container a1-hero__row">
-          <div>
-            <span className="a1-eyebrow">A-1 Sealcoating LLC · Asphalt Services</span>
-            <h1 className="a1-h1 a1-hero__title" style={{ marginTop: 16 }}>
+        <div className="a1-container">
+          <div className="a1-hero__row">
+            <span className="a1-eyebrow a1-hero__eyebrow">A-1 Sealcoating · Asphalt Services</span>
+            <h1 className="a1-h1 a1-hero__title">
               Protect. <em>Restore.</em> Impress.
             </h1>
             <p className="a1-hero__sub">
@@ -74,11 +75,11 @@ export function A1Hero() {
                 <span className="a1-btn__arrow"><ArrowRight width={16} height={16} /></span>
               </a>
             </div>
-          </div>
-          <div className="a1-hero__badges">
-            <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Over 25 Years</span>
-            <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Fully Insured</span>
-            <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Residential &amp; Commercial</span>
+            <div className="a1-hero__badges">
+              <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Over 25 Years</span>
+              <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Fully Insured</span>
+              <span className="a1-hero__badge"><span className="a1-hero__badge-dot" /> Residential &amp; Commercial</span>
+            </div>
           </div>
         </div>
       </div>

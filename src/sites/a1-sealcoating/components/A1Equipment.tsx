@@ -1,6 +1,8 @@
 import { PHOTOS, srcset, COMPANY } from '../a1Data'
 
-const SLUG = 'coastal-mansion-equipment'
+// Wider, more legible branded shot — truck + trailer with the A-1 logo and
+// phone number both clearly readable, full property context behind.
+const SLUG = 'trailer-truck-at-estate'
 
 export function A1Equipment() {
   const p = PHOTOS.find((x) => x.slug === SLUG)!
@@ -8,12 +10,18 @@ export function A1Equipment() {
 
   return (
     <section className="a1-section a1-equipment" aria-label="A-1 Sealcoating equipment and crew">
-      <div className="a1-container">
+      <div className="a1-container a1-container--wide">
         <div className="a1-equipment__grid">
           <div className="a1-equipment__media a1-reveal">
             <picture>
               <source type="image/webp" srcSet={`${s.webp1280} 1280w, ${s.webp1920} 1920w`} sizes="(max-width: 880px) 100vw, 50vw" />
-              <img src={s.jpg1920} alt={p.alt} loading="lazy" decoding="async" />
+              <img
+                src={s.jpg1920}
+                alt={p.alt}
+                loading="lazy"
+                decoding="async"
+                style={p.focal?.wide ? { objectPosition: p.focal.wide } : undefined}
+              />
             </picture>
           </div>
           <div className="a1-equipment__copy a1-reveal a1-reveal--right">
