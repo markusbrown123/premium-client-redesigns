@@ -20,9 +20,16 @@ export function A1Gallery() {
   const [filter, setFilter] = useState<Filter>('all')
   const [lightbox, setLightbox] = useState<number | null>(null)
 
-  const filtered = useMemo(() => {
-    const base = filter === 'all' ? PHOTOS : PHOTOS.filter((p) => p.category === filter)
-    if (base.length < 2) return base
+  const { filtered, fellBack } = useMemo(() => {
+    let base = filter === 'all' ? PHOTOS : PHOTOS.filter((p) => p.category === filter)
+    // Safety net: if a future data edit ever leaves a category empty, fall back
+    // to All Work rather than rendering a blank grid.
+    let didFallBack = false
+    if (base.length === 0) {
+      base = PHOTOS
+      didFallBack = true
+    }
+    if (base.length < 2) return { filtered: base, fellBack: didFallBack }
     // Sort for the 12-col + row-span grid. Anchor stays first (becomes the
     // span-8/row-span-3 feature). Landscapes follow because their wide+short
     // cells (span 6/row-span 2) pair into clean 2-up rows. Portraits trail and
@@ -32,7 +39,7 @@ export function A1Gallery() {
     const [anchor, ...rest] = base
     const landscapes = rest.filter((p) => p.orientation === 'landscape')
     const portraits = rest.filter((p) => p.orientation === 'portrait')
-    return [anchor, ...landscapes, ...portraits]
+    return { filtered: [anchor, ...landscapes, ...portraits], fellBack: didFallBack }
   }, [filter])
 
   const close = useCallback(() => setLightbox(null), [])
@@ -83,6 +90,12 @@ export function A1Gallery() {
           ))}
         </div>
 
+        {fellBack ? (
+          <p className="a1-gallery__fallback" role="status">
+            No photos in that category yet — showing all work instead.
+          </p>
+        ) : null}
+
         <div className="a1-gallery__grid">
           {filtered.map((p, i) => {
             const s = srcset(p.slug)
@@ -90,7 +103,7 @@ export function A1Gallery() {
               <button
                 key={p.slug}
                 type="button"
-                className={`${tileClass(p, i)} a1-reveal`}
+                className={tileClass(p, i)}
                 onClick={() => setLightbox(i)}
                 aria-label={`Open larger: ${p.alt}`}
               >

@@ -1,4 +1,4 @@
-import { PHOTOS, srcset, COMPANY } from '../a1Data'
+import { PHOTOS, srcset, COMPANY, OWNER } from '../a1Data'
 
 // Wider, more legible branded shot — truck + trailer with the A-1 logo and
 // phone number both clearly readable, full property context behind.
@@ -36,6 +36,29 @@ export function A1Equipment() {
             <p className="a1-lede">
               Twenty-five-plus years of doing this with the same standards. The phone goes straight to the people doing the work.
             </p>
+
+            <figure className="a1-owner-card">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${OWNER.srcset.webp320} 320w, ${OWNER.srcset.webp640} 640w`}
+                  sizes="(max-width: 880px) 96px, 112px"
+                />
+                <img
+                  src={OWNER.srcset.jpg320}
+                  alt={OWNER.alt}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: OWNER.focal }}
+                />
+              </picture>
+              <figcaption>
+                <span className="a1-owner-card__name">{OWNER.name}</span>
+                <span className="a1-owner-card__title">{OWNER.title} · {COMPANY.legalName}</span>
+                <span className="a1-owner-card__line">{OWNER.line}</span>
+              </figcaption>
+            </figure>
+
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 6 }}>
               <a className="a1-btn a1-btn--primary" href={COMPANY.phoneHref}>
                 Call {COMPANY.phone}

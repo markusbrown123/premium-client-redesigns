@@ -305,6 +305,25 @@ export const PROCESS_STEPS = [
   },
 ]
 
+// Owner portrait — small trust card asset. Image is medium-res casual portrait;
+// display small and never as hero. Optimized 320/640 jpg+webp variants live in
+// /media/a1-sealcoating/optimized/owner-{320,640}.{webp,jpg}.
+export const OWNER = {
+  name: 'Louis Carlesimo',
+  title: 'CEO',
+  line: 'Owner-led service. 25+ years on the job.',
+  alt: `Louis Carlesimo, CEO of ${'A-1 Sealcoating LLC'}.`,
+  // Subject sits in the upper-middle of the frame; nudge crop up so the face
+  // anchors any square/portrait crop instead of the boat wheel below.
+  focal: 'center 32%',
+  srcset: {
+    webp320: '/media/a1-sealcoating/optimized/owner-320.webp',
+    webp640: '/media/a1-sealcoating/optimized/owner-640.webp',
+    jpg320:  '/media/a1-sealcoating/optimized/owner-320.jpg',
+    jpg640:  '/media/a1-sealcoating/optimized/owner-640.jpg',
+  },
+}
+
 export const TRUST_BADGES = [
   { label: 'Over 25 Years', sub: 'In Business' },
   { label: 'Fully Insured', sub: 'LLC' },
