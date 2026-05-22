@@ -91,6 +91,10 @@ const CLIENT_META: Record<ClientId, { name: string; category: string }> = {
     name: 'The Deliverables',
     category: 'AI imagery · Campaign deliverables',
   },
+  'a1-sealcoating': {
+    name: 'A-1 Sealcoating LLC',
+    category: 'Asphalt services · Residential & commercial',
+  },
 }
 
 const CLIENT_IDS = Object.keys(CLIENT_META) as ClientId[]
@@ -441,6 +445,7 @@ export function getHeroRotation(limit = 8): MediaItem[] {
     platinum: [],
     'steve-giralt': [],
     deliverables: [],
+    'a1-sealcoating': [],
   }
   for (const c of clientsManifest) {
     const pool = c.items

@@ -5,6 +5,7 @@ import { SITE_TARGET } from './site'
 import { PlatinumSite } from './sites/platinum/PlatinumSite'
 import { SteveGiraltSite } from './sites/steve-giralt/SteveGiraltSite'
 import { DeliverablesSite } from './sites/deliverables/DeliverablesSite'
+import { A1SealcoatingSite } from './sites/a1-sealcoating/A1SealcoatingSite'
 
 function App() {
   switch (SITE_TARGET) {
@@ -12,6 +13,8 @@ function App() {
       return <SteveGiraltSite />
     case 'deliverables':
       return <DeliverablesSite />
+    case 'a1-sealcoating':
+      return <A1SealcoatingSite />
     case 'platinum':
     default:
       return <PlatinumSite />

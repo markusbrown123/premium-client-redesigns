@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-05-21T23:53:03.280Z",
+  "results": [
+    {
+      "slug": "stucco-mansion-fresh-seal",
+      "orig": "20240729_103417.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "crew-on-the-job-residential",
+      "orig": "20240811_123603.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "gray-colonial-curved-drive",
+      "orig": "20240811_125420.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "estate-cobblestone-apron",
+      "orig": "20241001_135156.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "blue-colonial-long-drive",
+      "orig": "20250604_142558.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "coastal-mansion-equipment",
+      "orig": "20250625_155131.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "coastal-mansion-finished",
+      "orig": "20250625_155153.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "brick-colonial-jet-black-wide",
+      "orig": "20250714_104243.jpg",
+      "orientation": "landscape",
+      "origWidth": 2047,
+      "origHeight": 922,
+      "outputs": 3
+    },
+    {
+      "slug": "modern-estate-curved-drive",
+      "orig": "20250714_164556.jpg",
+      "orientation": "landscape",
+      "origWidth": 2047,
+      "origHeight": 922,
+      "outputs": 3
+    },
+    {
+      "slug": "trailer-truck-at-estate",
+      "orig": "20250729_134432.jpg",
+      "orientation": "landscape",
+      "origWidth": 2047,
+      "origHeight": 922,
+      "outputs": 3
+    },
+    {
+      "slug": "dusk-fresh-seal-crepe-myrtle",
+      "orig": "20250812_194934.jpg",
+      "orientation": "portrait",
+      "origWidth": 922,
+      "origHeight": 2047,
+      "outputs": 3
+    },
+    {
+      "slug": "hilltop-estate-pillared-entry",
+      "orig": "20250827_180053.jpg",
+      "orientation": "landscape",
+      "origWidth": 2048,
+      "origHeight": 1536,
+      "outputs": 3
+    }
+  ]
+}

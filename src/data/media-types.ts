@@ -1,4 +1,4 @@
-export type ClientId = 'platinum' | 'steve-giralt' | 'deliverables'
+export type ClientId = 'platinum' | 'steve-giralt' | 'deliverables' | 'a1-sealcoating'
 
 export type MediaType = 'image' | 'video' | 'embed' | 'poster'
 

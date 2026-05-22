@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#3a3a3a"/>
+      <stop offset="35%" stop-color="#1a1a1a"/>
+      <stop offset="50%" stop-color="#000000"/>
+      <stop offset="65%" stop-color="#222222"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <filter id="dShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="rShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <text x="600" y="170" font-family="'Saira Condensed', sans-serif" font-weight="900" font-style="italic"
+        font-size="172" fill="url(#chrome)" text-anchor="middle"
+        textLength="1100" lengthAdjust="spacingAndGlyphs" filter="url(#dShadow)">A-1 SEALCOATING LLC</text>
+
+  <text x="600" y="252" font-family="'Saira Condensed', sans-serif" font-weight="700"
+        font-size="72" fill="#0d0d0d" text-anchor="middle"
+        textLength="780" lengthAdjust="spacingAndGlyphs">ASPHALT SERVICES</text>
+
+  <rect x="370" y="280" width="460" height="3" fill="#E32626"/>
+
+  <text x="600" y="370" font-family="'Caveat', cursive" font-weight="700"
+        font-size="84" fill="#E32626" text-anchor="middle"
+        textLength="700" lengthAdjust="spacingAndGlyphs" filter="url(#rShadow)">Over 25 Years Experience</text>
+
+  <text x="600" y="455" font-family="'Saira Condensed', sans-serif" font-weight="700"
+        font-size="42" fill="#0d0d0d" text-anchor="middle"
+        textLength="920" lengthAdjust="spacingAndGlyphs">FULLY INSURED &#x2022; COMMERCIAL &amp; RESIDENTIAL</text>
+</svg>

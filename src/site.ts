@@ -2,7 +2,7 @@ import type { ClientId } from './data/media-types'
 
 declare const __SITE_TARGET__: string | undefined
 
-const VALID: readonly ClientId[] = ['platinum', 'steve-giralt', 'deliverables']
+const VALID: readonly ClientId[] = ['platinum', 'steve-giralt', 'deliverables', 'a1-sealcoating']
 
 function pick(): ClientId {
   // Build-time define from vite.config.ts.

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect x="0" y="0" width="512" height="512" rx="92" fill="#0a0a0a"/>
+  <rect x="22" y="22" width="468" height="468" rx="74" fill="none" stroke="#E32626" stroke-width="14"/>
+  <text x="256" y="345" font-family="'Saira Condensed', sans-serif" font-weight="900" font-style="italic"
+        font-size="300" fill="#ffffff" text-anchor="middle"
+        textLength="340" lengthAdjust="spacingAndGlyphs">A-1</text>
+</svg>

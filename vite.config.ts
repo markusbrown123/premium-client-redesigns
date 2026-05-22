@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const VALID_TARGETS = ['platinum', 'steve-giralt', 'deliverables'] as const
+const VALID_TARGETS = ['platinum', 'steve-giralt', 'deliverables', 'a1-sealcoating'] as const
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
