@@ -23,10 +23,9 @@ export function A1SealcoatingSite() {
   useLenis()
   useReveal('.a1-reveal')
 
-  // Set tab title and meta tags appropriate to A-1, not Atelier.
   useEffect(() => {
     const prevTitle = document.title
-    document.title = `${COMPANY.legalName} — ${COMPANY.tagline} · ${COMPANY.phone}`
+    document.title = `${COMPANY.legalName} | ${COMPANY.tagline}`
     const setMeta = (name: string, content: string) => {
       let m = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null
       if (!m) {
@@ -51,7 +50,7 @@ export function A1SealcoatingSite() {
     }
     const restoreDesc = setMeta(
       'description',
-      `${COMPANY.legalName} — professional ${COMPANY.tagline.toLowerCase()}. Sealcoating, paving, crack filling, and line striping for residential driveways and commercial parking lots. ${COMPANY.experience}. ${COMPANY.insurance}. Call ${COMPANY.phone}.`,
+      `${COMPANY.legalName} — asphalt sealcoating, paving, line striping, and crack repair for ${COMPANY.scope.toLowerCase()} properties. ${COMPANY.insurance} with ${COMPANY.experience.toLowerCase()}. Call ${COMPANY.phone}.`,
     )
     const restoreTheme = setMeta('theme-color', '#070707')
     const restoreIcon = setLink('icon', '/brand/a1-mark@128w.png')
