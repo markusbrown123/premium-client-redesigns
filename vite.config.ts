@@ -10,7 +10,7 @@ const SITE_META: Record<Target, SiteMeta> = {
   'a1-sealcoating': {
     title: 'A-1 Sealcoating LLC | Asphalt Services',
     description:
-      'A-1 Sealcoating LLC — asphalt sealcoating, paving, line striping, and crack repair for commercial and residential properties. Fully insured with over 25 years experience.',
+      'A-1 Sealcoating Asphalt Services LLC — professional asphalt sealcoating, paving, line striping, and crack repair for residential and commercial properties. Fully insured with over 25 years experience.',
     themeColor: '#070707',
   },
   platinum: {

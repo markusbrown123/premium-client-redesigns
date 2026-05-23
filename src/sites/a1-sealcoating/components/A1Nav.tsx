@@ -23,12 +23,12 @@ export function A1Nav() {
   return (
     <header className={`a1-nav ${scrolled ? 'a1-nav--scrolled' : ''}`}>
       <div className="a1-container a1-nav__inner">
-        <a href="#top" className="a1-nav__brand" aria-label={`${COMPANY.shortName} — home`}>
+        <a href="#top" className="a1-nav__brand" aria-label={`A-1 Sealcoating Asphalt Services LLC — home`}>
           <img
             src="/brand/a1-logo-nav@800w.png"
             srcSet="/brand/a1-logo-nav@480w.png 480w, /brand/a1-logo-nav@800w.png 800w, /brand/a1-logo-nav.png 1200w"
             sizes="(max-width: 880px) 200px, 320px"
-            alt={`${COMPANY.legalName} — ${COMPANY.tagline}`}
+            alt="A-1 Sealcoating Asphalt Services LLC"
             className="a1-nav__logo"
             width={320}
             height={75}

@@ -72,7 +72,7 @@ const navSvg = `
 
   <text x="600" y="238" font-family="'Saira Condensed', sans-serif" font-weight="600"
         font-size="52" fill="#ffffff" text-anchor="middle"
-        textLength="720" lengthAdjust="spacingAndGlyphs">ASPHALT SERVICES</text>
+        textLength="880" lengthAdjust="spacingAndGlyphs">ASPHALT SERVICES LLC</text>
 </svg>`
 
 const fullDarkSvg = fullSvg

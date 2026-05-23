@@ -57,7 +57,10 @@ export function A1Hero() {
       <div className="a1-hero__content">
         <div className="a1-container">
           <div className="a1-hero__row">
-            <span className="a1-eyebrow a1-hero__eyebrow">A-1 Sealcoating · Asphalt Services</span>
+            <span className="a1-eyebrow a1-hero__eyebrow a1-hero__brand">
+              <span className="a1-hero__brand-line">A-1 SEALCOATING</span>
+              <span className="a1-hero__brand-line">ASPHALT SERVICES LLC</span>
+            </span>
             <h1 className="a1-h1 a1-hero__title">
               Protect. <em>Restore.</em> Impress.
             </h1>
