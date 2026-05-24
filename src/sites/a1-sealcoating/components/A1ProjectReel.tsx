@@ -56,7 +56,7 @@ export function A1ProjectReel() {
             </h2>
           </div>
           <p className="a1-lede a1-reveal" style={{ maxWidth: '38ch' }}>
-            A horizontal pass through twelve recent A-1 jobs. Drag on desktop, swipe on mobile.
+            A horizontal pass through our recent driveway finishes. Drag on desktop, swipe on mobile.
           </p>
         </header>
       </div>

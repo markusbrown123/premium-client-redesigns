@@ -15,11 +15,11 @@ export function A1FeaturedWork() {
           <div className="a1-section__head-title a1-reveal">
             <span className="a1-eyebrow">03 — Featured Work</span>
             <h2 className="a1-h2">
-              Recent driveways. <em>Real properties.</em>
+              Premium driveways. <em>Clean finish.</em>
             </h2>
           </div>
           <p className="a1-section__head-meta a1-lede a1-reveal">
-            A small sample of recent A-1 jobs. Every photo here is one of our finished surfaces — branded caution tape included.
+            A look at the standard we hold every residential driveway to — smooth jet-black finish, clean edges, premium curb appeal.
           </p>
         </header>
 
@@ -38,7 +38,7 @@ export function A1FeaturedWork() {
             <div className="a1-featured__caption">
               <div>
                 <div className="a1-featured__caption-meta">Featured · Premium Home</div>
-                <div className="a1-featured__caption-title">Fresh sealcoat — driveway restored</div>
+                <div className="a1-featured__caption-title">Premium residential finish</div>
               </div>
             </div>
           </a>

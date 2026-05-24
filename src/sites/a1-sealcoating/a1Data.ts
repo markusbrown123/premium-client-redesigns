@@ -32,24 +32,139 @@ export type A1Photo = {
 
 const base = '/media/a1-sealcoating/optimized'
 
+// Enhanced premium driveway imagery leads the photo set. These are high-res
+// portrait shots used to anchor the hero, featured spread, and gallery so the
+// site reads premium at first scroll. Real A-1 originals follow so the work,
+// crew, and equipment proof are still represented further down.
 export const PHOTOS: A1Photo[] = [
+  {
+    slug: 'enhanced-driveway-01',
+    alt: 'Freshly sealcoated jet-black driveway curving up to a large tan stucco luxury home under a clear blue sky.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: true,
+    featured: true,
+    // Portrait → 16/9 hero needs ~38% Y to keep both the home and the curved drive in frame.
+    focal: { hero: 'center 38%', card: 'center 45%', wide: 'center 42%' },
+  },
+  {
+    slug: 'enhanced-driveway-02',
+    alt: 'Curved freshly sealed driveway leading toward a stone-faced premium home with manicured lawn and bright sky.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: true,
+    featured: true,
+    focal: { hero: 'center 45%', card: 'center 48%', wide: 'center 44%' },
+  },
+  {
+    slug: 'enhanced-driveway-05',
+    alt: 'Long fresh-sealed driveway running toward a luxury brick estate framed by mature trees and clipped shrubs.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: true,
+    featured: true,
+    focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 48%' },
+  },
+  {
+    slug: 'enhanced-driveway-04',
+    alt: 'Curved jet-black driveway sweeping across a green lawn toward a modern white estate.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: true,
+    featured: true,
+    focal: { hero: 'center 45%', card: 'center 48%', wide: 'center 44%' },
+  },
+  {
+    slug: 'enhanced-driveway-03',
+    alt: 'Wide freshly sealed driveway leading straight to a gray gambrel coastal mansion with a wraparound porch.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: true,
+    featured: true,
+    focal: { hero: 'center 48%', card: 'center 50%', wide: 'center 46%' },
+  },
+  {
+    slug: 'enhanced-driveway-06',
+    alt: 'Curved smooth blacktop driveway with paver border running toward a gray gambrel-style home.',
+    category: 'premium-homes',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 50%', card: 'center 52%', wide: 'center 48%' },
+  },
+  {
+    slug: 'enhanced-driveway-07',
+    alt: 'Straight fresh-sealed residential driveway meeting a concrete apron in front of a modern white home.',
+    category: 'residential',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 40%', card: 'center 42%', wide: 'center 40%' },
+  },
+  {
+    slug: 'enhanced-driveway-08',
+    alt: 'Curved residential driveway with a fresh sealcoat finish leading toward a modern white home.',
+    category: 'residential',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 45%', card: 'center 48%', wide: 'center 44%' },
+  },
+  {
+    slug: 'enhanced-driveway-10',
+    alt: 'Curved freshly sealed driveway leading toward a light blue coastal-style home framed by clear sky.',
+    category: 'residential',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 48%', card: 'center 50%', wide: 'center 46%' },
+  },
+  // Real A-1 original landscape lands here so the Sealcoating filter still
+  // anchors to a strong landscape and a real job shot.
+  {
+    slug: 'brick-colonial-jet-black-wide',
+    alt: 'Wide view of a freshly sealcoated jet-black driveway alongside a brick colonial home with A-1 caution tape across the entry.',
+    category: 'sealcoating',
+    orientation: 'landscape',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 60%', card: 'center 55%', wide: 'center 58%' },
+  },
+  {
+    slug: 'enhanced-driveway-09',
+    alt: 'Freshly sealed driveway with smooth black finish bordered by blooming crepe myrtle trees at warm sunset.',
+    category: 'sealcoating',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 55%', card: 'center 52%', wide: 'center 50%' },
+  },
+  {
+    slug: 'modern-estate-curved-drive',
+    alt: 'Modern white estate with a freshly sealcoated curved driveway, A-1 caution tape across the apron.',
+    category: 'premium-homes',
+    orientation: 'landscape',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 55%', card: 'center 55%', wide: 'center 55%' },
+  },
   {
     slug: 'stucco-mansion-fresh-seal',
     alt: 'Freshly sealcoated jet-black driveway in front of a large stucco home, finished by A-1 Sealcoating LLC.',
     category: 'premium-homes',
     orientation: 'portrait',
-    heroEligible: true,
-    featured: true,
+    heroEligible: false,
+    featured: false,
     focal: { hero: 'center 62%', card: 'center 58%', wide: 'center 60%' },
   },
   {
-    slug: 'gray-colonial-curved-drive',
-    alt: 'Curved residential driveway with paver border, freshly sealcoated by A-1 Sealcoating, with A-1 caution tape across the apron.',
-    category: 'residential',
+    slug: 'coastal-mansion-finished',
+    alt: 'Freshly sealcoated driveway in front of a large coastal mansion under a bright blue sky.',
+    category: 'premium-homes',
     orientation: 'portrait',
-    heroEligible: true,
-    featured: true,
-    focal: { hero: 'center 45%', card: 'center 45%', wide: 'center 42%' },
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
   },
   {
     slug: 'estate-cobblestone-apron',
@@ -57,71 +172,8 @@ export const PHOTOS: A1Photo[] = [
     category: 'premium-homes',
     orientation: 'portrait',
     heroEligible: false,
-    featured: true,
+    featured: false,
     focal: { hero: 'center 50%', card: 'center 45%', wide: 'center 40%' },
-  },
-  {
-    slug: 'blue-colonial-long-drive',
-    alt: 'Long curved residential driveway leading up to a blue colonial home, freshly sealcoated.',
-    category: 'residential',
-    orientation: 'portrait',
-    heroEligible: false,
-    featured: false,
-    focal: { hero: 'center 45%', card: 'center 40%', wide: 'center 40%' },
-  },
-  {
-    slug: 'coastal-mansion-equipment',
-    alt: 'A-1 Sealcoating branded equipment trailer parked at the curb of a coastal mansion job site.',
-    category: 'equipment',
-    orientation: 'portrait',
-    heroEligible: false,
-    featured: false,
-    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 45%' },
-  },
-  {
-    slug: 'coastal-mansion-finished',
-    alt: 'Freshly sealcoated driveway in front of a large coastal mansion under a bright blue sky.',
-    category: 'premium-homes',
-    orientation: 'portrait',
-    heroEligible: true,
-    featured: true,
-    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
-  },
-  {
-    slug: 'brick-colonial-jet-black-wide',
-    alt: 'Wide view of a freshly sealcoated jet-black driveway alongside a brick colonial home with A-1 caution tape across the entry.',
-    category: 'sealcoating',
-    orientation: 'landscape',
-    heroEligible: true,
-    featured: true,
-    focal: { hero: 'center 60%', card: 'center 55%', wide: 'center 58%' },
-  },
-  {
-    slug: 'modern-estate-curved-drive',
-    alt: 'Modern white estate with a freshly sealcoated curved driveway, A-1 caution tape across the apron.',
-    category: 'premium-homes',
-    orientation: 'landscape',
-    heroEligible: true,
-    featured: true,
-    focal: { hero: 'center 55%', card: 'center 55%', wide: 'center 55%' },
-  },
-  {
-    slug: 'trailer-truck-at-estate',
-    alt: 'A-1 Sealcoating branded trailer hitched to the company pickup truck at a residential estate job site.',
-    category: 'equipment',
-    orientation: 'landscape',
-    heroEligible: false,
-    featured: false,
-    focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 50%' },
-  },
-  {
-    slug: 'dusk-fresh-seal-crepe-myrtle',
-    alt: 'Freshly sealcoated jet-black driveway at dusk, framed by blooming crepe myrtle trees.',
-    category: 'sealcoating',
-    orientation: 'portrait',
-    heroEligible: false,
-    featured: false,
-    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
   },
   {
     slug: 'hilltop-estate-pillared-entry',
@@ -133,13 +185,57 @@ export const PHOTOS: A1Photo[] = [
     focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 50%' },
   },
   {
+    slug: 'gray-colonial-curved-drive',
+    alt: 'Curved residential driveway with paver border, freshly sealcoated by A-1 Sealcoating, with A-1 caution tape across the apron.',
+    category: 'residential',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 45%', card: 'center 45%', wide: 'center 42%' },
+  },
+  {
+    slug: 'blue-colonial-long-drive',
+    alt: 'Long curved residential driveway leading up to a blue colonial home, freshly sealcoated.',
+    category: 'residential',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 45%', card: 'center 40%', wide: 'center 40%' },
+  },
+  {
+    slug: 'dusk-fresh-seal-crepe-myrtle',
+    alt: 'Freshly sealcoated jet-black driveway at dusk, framed by blooming crepe myrtle trees.',
+    category: 'sealcoating',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 48%' },
+  },
+  {
+    slug: 'trailer-truck-at-estate',
+    alt: 'A-1 Sealcoating branded trailer hitched to the company pickup truck at a residential estate job site.',
+    category: 'equipment',
+    orientation: 'landscape',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 50%', card: 'center 50%', wide: 'center 50%' },
+  },
+  {
+    slug: 'coastal-mansion-equipment',
+    alt: 'A-1 Sealcoating branded equipment trailer parked at the curb of a coastal mansion job site.',
+    category: 'equipment',
+    orientation: 'portrait',
+    heroEligible: false,
+    featured: false,
+    focal: { hero: 'center 55%', card: 'center 50%', wide: 'center 45%' },
+  },
+  {
     slug: 'crew-on-the-job-residential',
     alt: 'A-1 Sealcoating crew working on a residential driveway with the branded equipment trailer behind them.',
     category: 'equipment',
     orientation: 'portrait',
     heroEligible: false,
     featured: false,
-    // Push subject toward top so the dark vehicle interior at the bottom is cropped.
     focal: { hero: 'center 35%', card: 'center 32%', wide: 'center 30%' },
   },
 ]
@@ -154,37 +250,48 @@ export function srcset(slug: string): { webp1920: string; webp1280: string; webp
   }
 }
 
-// Curated rotation for the hero. Five strongest shots — clear driveway shape,
-// strong curb appeal, premium property context. Landscape leads so the 16/9
-// hero crop is honest about each frame.
+// Curated rotation for the hero. Five strongest premium driveway shots —
+// luxury home + clean blacktop + clear sky. Enhanced photos lead so the first
+// impression is the most polished work.
 export const HERO_ROTATION = [
-  'brick-colonial-jet-black-wide',
-  'modern-estate-curved-drive',
-  'coastal-mansion-finished',
-  'gray-colonial-curved-drive',
-  'stucco-mansion-fresh-seal',
+  'enhanced-driveway-01',
+  'enhanced-driveway-05',
+  'enhanced-driveway-02',
+  'enhanced-driveway-04',
+  'enhanced-driveway-03',
 ]
 
-// Featured Work — magazine spread: one wide lead + two tiles.
-// Lead is the strongest wide shot. Tiles balance landscape + portrait detail.
+// Featured Work — magazine spread: one lead + two tiles.
+// Lead is the single most premium driveway. Tiles balance a long-drive estate
+// shot and a curved coastal mansion drive.
 export const FEATURED_PICKS = {
-  lead: 'modern-estate-curved-drive',
-  tiles: ['brick-colonial-jet-black-wide', 'estate-cobblestone-apron'],
+  lead: 'enhanced-driveway-01',
+  tiles: ['enhanced-driveway-05', 'enhanced-driveway-03'],
 }
 
-// Project reel — alternate landscape/portrait; the strongest premium shots
-// front-load so a quick scan reads as "premium driveway work".
+// Project reel — enhanced premium driveways front-load, then real A-1
+// originals (jobs, equipment, crew) round out the scrub.
 export const REEL_ORDER = [
+  'enhanced-driveway-01',
+  'enhanced-driveway-05',
+  'enhanced-driveway-02',
+  'enhanced-driveway-04',
+  'enhanced-driveway-03',
+  'enhanced-driveway-07',
+  'enhanced-driveway-06',
+  'enhanced-driveway-08',
+  'enhanced-driveway-10',
+  'enhanced-driveway-09',
   'brick-colonial-jet-black-wide',
-  'stucco-mansion-fresh-seal',
   'modern-estate-curved-drive',
+  'stucco-mansion-fresh-seal',
   'gray-colonial-curved-drive',
-  'hilltop-estate-pillared-entry',
   'coastal-mansion-finished',
-  'trailer-truck-at-estate',
+  'hilltop-estate-pillared-entry',
   'estate-cobblestone-apron',
   'dusk-fresh-seal-crepe-myrtle',
   'blue-colonial-long-drive',
+  'trailer-truck-at-estate',
   'coastal-mansion-equipment',
   'crew-on-the-job-residential',
 ]

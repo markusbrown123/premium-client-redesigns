@@ -1,7 +1,7 @@
 {
   "site": "a1-sealcoating",
   "label": "A-1 Sealcoating",
-  "generatedAt": "2026-05-23T20:07:20.698Z",
+  "generatedAt": "2026-05-23T23:57:53.061Z",
   "previewUrl": "http://localhost:4176/",
   "viewports": [
     {
@@ -43,12 +43,12 @@
         "horizontalOverflow": false,
         "overflowAmount": 0,
         "overflowingExamples": [
-          "div.a1-hero__slide is-active is-drifting (right=861)",
-          "picture. (right=861)",
-          "img.a1-hero__img (right=861)",
-          "div.a1-hero__slide   (right=845)",
-          "picture. (right=845)",
-          "img.a1-hero__img (right=845)"
+          "div.a1-hero__slide   (right=860)",
+          "picture. (right=860)",
+          "img.a1-hero__img (right=860)",
+          "div.a1-hero__slide is-active is-drifting (right=844)",
+          "picture. (right=844)",
+          "img.a1-hero__img (right=844)"
         ],
         "hero": null,
         "heroMedia": null,
@@ -130,12 +130,12 @@
         "horizontalOverflow": false,
         "overflowAmount": 0,
         "overflowingExamples": [
-          "div.a1-hero__slide is-active is-drifting (right=2016)",
-          "picture. (right=2016)",
-          "img.a1-hero__img (right=2016)",
-          "div.a1-hero__slide   (right=1978)",
-          "picture. (right=1978)",
-          "img.a1-hero__img (right=1978)"
+          "div.a1-hero__slide   (right=2014)",
+          "picture. (right=2014)",
+          "img.a1-hero__img (right=2014)",
+          "div.a1-hero__slide is-active is-drifting (right=1979)",
+          "picture. (right=1979)",
+          "img.a1-hero__img (right=1979)"
         ],
         "hero": null,
         "heroMedia": null,
