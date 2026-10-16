@@ -23,6 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# Claude Code session/local state
-.claude/
+# Claude Code session/local state (shared skills in .claude/skills/ are committed)
+.claude/*
+!.claude/skills/
+
+# Website skill scratch output (playwright-cli, design-taste-frontend, awesome-design)
+.playwright-cli/
+.taste-skill/
+.design-refs/
 public/media/steve-giralt/file.mp4
