@@ -16,16 +16,15 @@ import { A1Faq } from './components/A1Faq'
 import { A1Contact } from './components/A1Contact'
 import { A1Footer } from './components/A1Footer'
 import { A1MobileCall } from './components/A1MobileCall'
-import { COMPANY } from './a1Data'
 
 export function A1SealcoatingSite() {
   // Run shared smooth-scroll + reveal hooks. The reveal hook keys off `.a1-reveal`.
   useLenis()
   useReveal('.a1-reveal')
 
+  // The title and description come from index.html (vite.config.ts SITE_META), so search engines
+  // read one version; only the browser chrome is set here.
   useEffect(() => {
-    const prevTitle = document.title
-    document.title = `${COMPANY.legalName} | ${COMPANY.tagline}`
     const setMeta = (name: string, content: string) => {
       let m = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null
       if (!m) {
@@ -48,15 +47,9 @@ export function A1SealcoatingSite() {
       l.href = href
       return () => { if (l) l.href = prev }
     }
-    const restoreDesc = setMeta(
-      'description',
-      `${COMPANY.legalName} — asphalt sealcoating, paving, line striping, and crack repair for ${COMPANY.scope.toLowerCase()} properties. ${COMPANY.insurance} with ${COMPANY.experience.toLowerCase()}. Call ${COMPANY.phone}.`,
-    )
     const restoreTheme = setMeta('theme-color', '#070707')
     const restoreIcon = setLink('icon', '/brand/a1-mark@128w.png')
     return () => {
-      document.title = prevTitle
-      restoreDesc()
       restoreTheme()
       restoreIcon()
     }

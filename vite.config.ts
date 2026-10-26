@@ -1,17 +1,25 @@
+import { readFileSync } from 'node:fs'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 
 const VALID_TARGETS = ['platinum', 'steve-giralt', 'deliverables', 'a1-sealcoating'] as const
 type Target = (typeof VALID_TARGETS)[number]
 
-type SiteMeta = { title: string; description: string; themeColor: string }
+// url: the live address (adds robots.txt and sitemap.xml to the build). head: a file whose
+// contents go at the end of <head> (canonical, Open Graph image, JSON-LD). ownFonts: the site
+// self-hosts its fonts, so the shared Google Fonts block in index.html is left out.
+type SiteMeta = { title: string; description: string; themeColor: string; url?: string; head?: string; ownFonts?: boolean }
 
 const SITE_META: Record<Target, SiteMeta> = {
   'a1-sealcoating': {
-    title: 'A-1 Sealcoating LLC | Asphalt Services',
+    // From src/sites/a1-sealcoating/business.json via the local-seo skill (`seo.mjs meta`).
+    title: 'Asphalt Sealcoating & Paving in New Jersey | A-1 Sealcoating LLC',
     description:
-      'A-1 Sealcoating Asphalt Services LLC — professional asphalt sealcoating, paving, line striping, and crack repair for residential and commercial properties. Fully insured with over 25 years experience.',
+      'Asphalt sealcoating, paving, crack filling and line striping for homes and businesses. Fully insured, over 25 years in business. Call (732) 822-5652.',
     themeColor: '#070707',
+    url: 'https://a1sealcoating.llc/',
+    head: 'src/sites/a1-sealcoating/head.html',
+    ownFonts: true,
   },
   platinum: {
     title: 'Platinum — Production & Creative Technology',
@@ -33,15 +41,29 @@ const SITE_META: Record<Target, SiteMeta> = {
   },
 }
 
+const attr = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+
 function htmlMetaPlugin(target: Target): Plugin {
   const meta = SITE_META[target]
   return {
     name: 'site-html-meta',
     transformIndexHtml(html) {
       return html
-        .replace(/%APP_TITLE%/g, meta.title)
-        .replace(/%APP_DESCRIPTION%/g, meta.description)
+        .replace(/%APP_TITLE%/g, attr(meta.title))
+        .replace(/%APP_DESCRIPTION%/g, attr(meta.description))
         .replace(/%APP_THEME_COLOR%/g, meta.themeColor)
+        .replace(/[ \t]*<!-- google-fonts -->[\s\S]*?<!-- \/google-fonts -->\n?/, (block) => (meta.ownFonts ? '' : block))
+        // The head file's comments are notes for us, not for the published page.
+        .replace('</head>', meta.head ? `${readFileSync(meta.head, 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '')}</head>` : '</head>')
+    },
+    generateBundle() {
+      if (!meta.url) return
+      this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `User-agent: *\nAllow: /\n\nSitemap: ${meta.url}sitemap.xml\n` })
+      this.emitFile({
+        type: 'asset',
+        fileName: 'sitemap.xml',
+        source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${meta.url}</loc></url>\n</urlset>\n`,
+      })
     },
   }
 }

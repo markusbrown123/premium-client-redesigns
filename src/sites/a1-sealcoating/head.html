@@ -1,0 +1,103 @@
+<!-- A-1 Sealcoating: added to <head> by vite.config.ts (a1-sealcoating build only).
+     The tags and JSON-LD below come from business.json, through the local-seo skill (it lives in
+     the auto repo, .claude/skills/local-seo; this repo ignores .claude/):
+       node ~/auto/.claude/skills/local-seo/scripts/seo.mjs meta   src/sites/a1-sealcoating/business.json
+       node ~/auto/.claude/skills/local-seo/scripts/seo.mjs schema src/sites/a1-sealcoating/business.json
+     Change business.json and regenerate; don't edit the JSON-LD by hand. -->
+<link rel="canonical" href="https://a1sealcoating.llc/">
+<meta property="og:url" content="https://a1sealcoating.llc/">
+<meta property="og:image" content="https://a1sealcoating.llc/media/a1-sealcoating/og-1200x630.jpg">
+<meta name="twitter:image" content="https://a1sealcoating.llc/media/a1-sealcoating/og-1200x630.jpg" />
+<!-- The fonts the first screen draws with (headline, buttons, intro), so they're in before it paints. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/a1/saira-condensed-latin-900-normal.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/a1/saira-condensed-latin-700-normal.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/a1/saira-condensed-latin-800-normal.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/a1/saira-condensed-latin-600-normal.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/a1/manrope-latin-wght-normal.woff2" />
+<!-- The first hero photo (HERO_ROTATION[0] in a1Data.ts), fetched alongside the script instead of after it. -->
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesizes="100vw" imagesrcset="/media/a1-sealcoating/optimized/enhanced-driveway-01-640.webp 640w, /media/a1-sealcoating/optimized/enhanced-driveway-01-1280.webp 1280w, /media/a1-sealcoating/optimized/enhanced-driveway-01-1920.webp 1920w" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://a1sealcoating.llc/#business",
+      "name": "A-1 Sealcoating LLC",
+      "url": "https://a1sealcoating.llc/",
+      "telephone": "+17328225652",
+      "logo": "https://a1sealcoating.llc/brand/a1-logo-clean@800w.png",
+      "description": "Asphalt sealcoating, paving, crack filling and line striping for homes and businesses. Fully insured, over 25 years in business.",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "New Jersey"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "A-1 Sealcoating LLC services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sealcoating",
+              "description": "Protect asphalt from sun, water, salt and fuel."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Asphalt Paving",
+              "description": "New driveways, new lots, dependable surface."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Crack Filling",
+              "description": "Stop small cracks before they become big problems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Line Striping",
+              "description": "Crisp parking lines, ADA stalls, directional markings."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential Driveways",
+              "description": "Driveway resurfacing, sealcoating and crack repair."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Asphalt Maintenance",
+              "description": "Sealcoating, crack filling, striping and patching for parking lots and commercial buildings."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://a1sealcoating.llc/#website",
+      "url": "https://a1sealcoating.llc/",
+      "name": "A-1 Sealcoating LLC",
+      "publisher": {
+        "@id": "https://a1sealcoating.llc/#business"
+      }
+    }
+  ]
+}
+</script>

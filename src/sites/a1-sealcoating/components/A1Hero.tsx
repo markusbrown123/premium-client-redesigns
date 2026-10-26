@@ -10,11 +10,13 @@ export function A1Hero() {
     .filter((p): p is NonNullable<typeof p> => Boolean(p))
   const [active, setActive] = useState(0)
   const [drifting, setDrifting] = useState(true)
+  // The other slides mount once the first photo has loaded, so on a phone they don't compete with it.
+  const [restReady, setRestReady] = useState(false)
   const reducedRef = useRef(false)
 
   useEffect(() => {
     reducedRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reducedRef.current) return
+    if (reducedRef.current || !restReady) return
     const id = window.setInterval(() => {
       setDrifting(false)
       // Reset drift so transform animates from 1.0 -> 1.10 each cycle.
@@ -24,7 +26,7 @@ export function A1Hero() {
       })
     }, SLIDE_MS)
     return () => window.clearInterval(id)
-  }, [slides.length])
+  }, [slides.length, restReady])
 
   return (
     <section className="a1-hero" id="top">
@@ -36,7 +38,7 @@ export function A1Hero() {
               key={slide.slug}
               className={`a1-hero__slide ${i === active ? 'is-active' : ''} ${i === active && drifting ? 'is-drifting' : ''}`}
             >
-              <picture>
+              {(i === 0 || restReady) && <picture>
                 <source type="image/webp" srcSet={`${s.webp640} 640w, ${s.webp1280} 1280w, ${s.webp1920} 1920w`} sizes="100vw" />
                 <img
                   className="a1-hero__img"
@@ -45,9 +47,10 @@ export function A1Hero() {
                   loading={i === 0 ? 'eager' : 'lazy'}
                   fetchPriority={i === 0 ? 'high' : 'auto'}
                   decoding="async"
+                  onLoad={i === 0 ? () => setRestReady(true) : undefined}
                   style={slide.focal?.hero ? { objectPosition: slide.focal.hero } : undefined}
                 />
-              </picture>
+              </picture>}
             </div>
           )
         })}

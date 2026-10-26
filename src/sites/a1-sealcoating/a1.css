@@ -1,5 +1,17 @@
 /* A-1 Sealcoating — site-scoped styles. Asphalt-led, photo-first, contractor-credible but premium. */
 
+/* The four families the site uses, self-hosted (public/fonts/a1, SIL OFL — see LICENSE.txt there) so the
+   ones on the first screen can be preloaded and swap in before the hero paints instead of shifting it.
+   Own family names keep them apart from the shared Google Fonts the other sites load. */
+@font-face { font-family: 'A1 Saira Condensed'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/a1/saira-condensed-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Saira Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/a1/saira-condensed-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Saira Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/a1/saira-condensed-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Saira Condensed'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/a1/saira-condensed-latin-800-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Saira Condensed'; font-style: normal; font-weight: 900; font-display: swap; src: url('/fonts/a1/saira-condensed-latin-900-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Manrope'; font-style: normal; font-weight: 200 800; font-display: swap; src: url('/fonts/a1/manrope-latin-wght-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/a1/jetbrains-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'A1 Caveat'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/a1/caveat-latin-wght-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
 .a1-site {
   --a1-black: #070707;
   --a1-asphalt: #0d0d0d;
@@ -15,10 +27,10 @@
   --a1-cream: #f7f4ef;
   --a1-white: #ffffff;
 
-  --a1-display: 'Saira Condensed', 'Barlow Condensed', 'Avenir Next Condensed', 'Helvetica Neue', sans-serif;
-  --a1-body: 'Manrope', 'Inter', system-ui, sans-serif;
-  --a1-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --a1-script: 'Caveat', 'Brush Script MT', cursive;
+  --a1-display: 'A1 Saira Condensed', 'Saira Condensed', 'Barlow Condensed', 'Avenir Next Condensed', 'Helvetica Neue', sans-serif;
+  --a1-body: 'A1 Manrope', 'Manrope', 'Inter', system-ui, sans-serif;
+  --a1-mono: 'A1 JetBrains Mono', 'JetBrains Mono', ui-monospace, monospace;
+  --a1-script: 'A1 Caveat', 'Caveat', 'Brush Script MT', cursive;
 
   --a1-radius: 4px;
   --a1-radius-lg: 14px;
@@ -742,6 +754,7 @@
   -webkit-overflow-scrolling: touch;
 }
 .a1-reel__track.is-dragging { cursor: grabbing; }
+.a1-reel__track:focus-visible { outline: 2px solid var(--a1-red); outline-offset: 4px; }
 .a1-reel__track::-webkit-scrollbar { height: 6px; }
 .a1-reel__track::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
 .a1-reel__track::-webkit-scrollbar-thumb { background: var(--a1-red); border-radius: 3px; }
@@ -1083,7 +1096,7 @@
   display: flex; justify-content: space-between; align-items: center;
   font-family: var(--a1-mono);
   font-size: 12px;
-  color: var(--a1-mid);
+  color: var(--a1-fog); /* --a1-mid is 3.6:1 on the footer; small print needs 4.5:1 */
   flex-wrap: wrap; gap: 12px;
 }
 @media (max-width: 720px) {

@@ -61,7 +61,8 @@ export function A1ProjectReel() {
         </header>
       </div>
 
-      <div className="a1-reel__track" ref={trackRef}>
+      {/* Focusable so keyboard users can scroll it with the arrow keys. */}
+      <div className="a1-reel__track" ref={trackRef} tabIndex={0} role="region" aria-label="Project photos, scroll sideways">
         {cards.map((p) => {
           const s = srcset(p.slug)
           const label = CATEGORIES.find((c) => c.id === p.category)?.label ?? p.category.replace('-', ' ')
