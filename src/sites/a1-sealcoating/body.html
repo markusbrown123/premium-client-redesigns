@@ -1,0 +1,12 @@
+<!-- Netlify registers forms from the deployed HTML at deploy time. The estimate form in
+     components/A1Contact.tsx is drawn by React, so this hidden copy (same name, same field names)
+     is what registers it. Keep the two in step. -->
+<form name="a1-estimate" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="a1-estimate" />
+  <input name="bot-field" />
+  <input name="name" />
+  <input name="phone" />
+  <input name="email" />
+  <select name="service"></select>
+  <textarea name="message"></textarea>
+</form>

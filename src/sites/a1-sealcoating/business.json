@@ -1,19 +1,49 @@
 {
   "name": "A-1 Sealcoating LLC",
+  "alternateName": "A-1 Sealcoating Asphalt Services",
   "type": "HomeAndConstructionBusiness",
   "url": "https://a1sealcoating.llc",
   "telephone": "732-822-5652",
   "tagline": "Asphalt Sealcoating & Paving",
   "description": "Asphalt sealcoating, paving, crack filling and line striping for homes and businesses. Fully insured, over 25 years in business.",
-  "areaServed": [{ "@type": "State", "name": "New Jersey" }],
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "New Jersey"
+    }
+  ],
   "logo": "https://a1sealcoating.llc/brand/a1-logo-clean@800w.png",
   "ogImage": "https://a1sealcoating.llc/media/a1-sealcoating/og-1200x630.jpg",
   "services": [
-    { "name": "Sealcoating", "slug": "sealcoating", "description": "Protect asphalt from sun, water, salt and fuel." },
-    { "name": "Asphalt Paving", "slug": "asphalt-paving", "description": "New driveways, new lots, dependable surface." },
-    { "name": "Crack Filling", "slug": "crack-filling", "description": "Stop small cracks before they become big problems." },
-    { "name": "Line Striping", "slug": "line-striping", "description": "Crisp parking lines, ADA stalls, directional markings." },
-    { "name": "Residential Driveways", "slug": "residential-driveways", "description": "Driveway resurfacing, sealcoating and crack repair." },
-    { "name": "Commercial Asphalt Maintenance", "slug": "commercial-asphalt-maintenance", "description": "Sealcoating, crack filling, striping and patching for parking lots and commercial buildings." }
+    {
+      "name": "Sealcoating",
+      "slug": "sealcoating",
+      "description": "Protect asphalt from sun, water, salt and fuel."
+    },
+    {
+      "name": "Asphalt Paving",
+      "slug": "asphalt-paving",
+      "description": "New driveways, new lots, dependable surface."
+    },
+    {
+      "name": "Crack Filling",
+      "slug": "crack-filling",
+      "description": "Stop small cracks before they become big problems."
+    },
+    {
+      "name": "Line Striping",
+      "slug": "line-striping",
+      "description": "Crisp parking lines, ADA stalls, directional markings."
+    },
+    {
+      "name": "Residential Driveways",
+      "slug": "residential-driveways",
+      "description": "Driveway resurfacing, sealcoating and crack repair."
+    },
+    {
+      "name": "Commercial Asphalt Maintenance",
+      "slug": "commercial-asphalt-maintenance",
+      "description": "Sealcoating, crack filling, striping and patching for parking lots and commercial buildings."
+    }
   ]
 }

@@ -6,9 +6,10 @@ const VALID_TARGETS = ['platinum', 'steve-giralt', 'deliverables', 'a1-sealcoati
 type Target = (typeof VALID_TARGETS)[number]
 
 // url: the live address (adds robots.txt and sitemap.xml to the build). head: a file whose
-// contents go at the end of <head> (canonical, Open Graph image, JSON-LD). ownFonts: the site
+// contents go at the end of <head> (canonical, Open Graph image, JSON-LD); body: the same at the
+// end of <body> (e.g. a hidden copy of a React form for Netlify to register). ownFonts: the site
 // self-hosts its fonts, so the shared Google Fonts block in index.html is left out.
-type SiteMeta = { title: string; description: string; themeColor: string; url?: string; head?: string; ownFonts?: boolean }
+type SiteMeta = { title: string; description: string; themeColor: string; url?: string; head?: string; body?: string; ownFonts?: boolean }
 
 const SITE_META: Record<Target, SiteMeta> = {
   'a1-sealcoating': {
@@ -19,6 +20,7 @@ const SITE_META: Record<Target, SiteMeta> = {
     themeColor: '#070707',
     url: 'https://a1sealcoating.llc/',
     head: 'src/sites/a1-sealcoating/head.html',
+    body: 'src/sites/a1-sealcoating/body.html',
     ownFonts: true,
   },
   platinum: {
@@ -42,6 +44,8 @@ const SITE_META: Record<Target, SiteMeta> = {
 }
 
 const attr = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+// A site's extra head/body markup; its comments are notes for us, not for the published page.
+const part = (file?: string) => (file ? readFileSync(file, 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '') : '')
 
 function htmlMetaPlugin(target: Target): Plugin {
   const meta = SITE_META[target]
@@ -53,8 +57,8 @@ function htmlMetaPlugin(target: Target): Plugin {
         .replace(/%APP_DESCRIPTION%/g, attr(meta.description))
         .replace(/%APP_THEME_COLOR%/g, meta.themeColor)
         .replace(/[ \t]*<!-- google-fonts -->[\s\S]*?<!-- \/google-fonts -->\n?/, (block) => (meta.ownFonts ? '' : block))
-        // The head file's comments are notes for us, not for the published page.
-        .replace('</head>', meta.head ? `${readFileSync(meta.head, 'utf8').replace(/<!--[\s\S]*?-->\n?/g, '')}</head>` : '</head>')
+        .replace('</head>', `${part(meta.head)}</head>`)
+        .replace('</body>', `${part(meta.body)}</body>`)
     },
     generateBundle() {
       if (!meta.url) return

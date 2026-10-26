@@ -1,9 +1,25 @@
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { COMPANY, SERVICES } from '../a1Data'
 import { Phone, ArrowRight } from './A1Icons'
 
+type SendState = 'idle' | 'sending' | 'sent' | 'failed'
+
 export function A1Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [state, setState] = useState<SendState>('idle')
+
+  // Posts the form to Netlify the way its docs show for JavaScript-rendered forms, and only says
+  // "sent" once Netlify has it. Without JavaScript the form still posts natively.
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setState('sending')
+    try {
+      const body = new URLSearchParams(new FormData(e.currentTarget) as unknown as Record<string, string>).toString()
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
+      setState(res.ok ? 'sent' : 'failed')
+    } catch {
+      setState('failed')
+    }
+  }
 
   return (
     <section className="a1-section a1-contact" id="contact">
@@ -38,19 +54,16 @@ export function A1Contact() {
             </div>
           </div>
 
-          {/* Netlify-static form. data-netlify="true" + a name is enough for Netlify forms.
-              We also keep an honeypot field to deter bots. Submission goes via standard
-              form-encoded POST so it works without JS in production on Netlify. */}
+          {/* Netlify form. Netlify only registers forms it finds in the deployed HTML, and this one is
+              drawn by React, so a hidden copy with the same name and fields is in body.html (added to
+              the A-1 build by vite.config.ts) — keep the two in step. Honeypot field deters bots. */}
           <form
             className="a1-form a1-reveal a1-reveal--right"
             name="a1-estimate"
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            onSubmit={() => {
-              // Optimistic UX; Netlify will still process the POST.
-              setSubmitted(true)
-            }}
+            onSubmit={onSubmit}
           >
             <input type="hidden" name="form-name" value="a1-estimate" />
             <p style={{ display: 'none' }}>
@@ -93,10 +106,15 @@ export function A1Contact() {
               />
             </div>
 
-            <button className="a1-btn a1-btn--primary a1-form__submit" type="submit" disabled={submitted}>
-              <span>{submitted ? 'Sent — we’ll be in touch' : 'Request estimate'}</span>
-              {submitted ? null : <span className="a1-btn__arrow"><ArrowRight width={16} height={16} /></span>}
+            <button className="a1-btn a1-btn--primary a1-form__submit" type="submit" disabled={state === 'sending' || state === 'sent'}>
+              <span>{state === 'sent' ? 'Sent — we’ll be in touch' : state === 'sending' ? 'Sending…' : 'Request estimate'}</span>
+              {state === 'idle' || state === 'failed' ? <span className="a1-btn__arrow"><ArrowRight width={16} height={16} /></span> : null}
             </button>
+            {state === 'failed' && (
+              <p className="a1-form__note" role="alert">
+                That didn’t go through. Please call {COMPANY.phone}, or try again.
+              </p>
+            )}
 
             <p className="a1-form__note">
               Prefer to talk now? <a href={COMPANY.phoneHref} style={{ color: '#fff', borderBottom: '1px solid currentColor' }}>
